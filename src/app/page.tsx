@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import Image from "next/image"
 import { useState, useEffect } from "react"
 import {
@@ -106,16 +107,18 @@ export default function Home() {
                   </span> e escalam resultados.
                 </p>
                 
-                <Button 
-                  className="group bg-[#FF4D4D] hover:bg-[#FF4D4D] text-white px-10 py-7 text-xl rounded-xl transition-all 
-                            hover:scale-105 hover:shadow-2xl hover:shadow-[#FF4D4D]/30 animate-pop-in [animation-delay:0.5s]
-                            focus:ring-4 focus:ring-[#FF4D4D]/50 cursor-pointer"
-                >
-                  <span className="flex items-center gap-3">
-                    Quero um site que vende 
-                    <ChevronRight className="h-6 w-6 transition-transform group-hover:translate-x-1" />
-                  </span>
-                </Button>
+                <Link target="_blank" href="https://wa.me/5575983252987?text=Ol%C3%A1,%20tenho%20interesse%20em%20criar%20um%20site%20com%20voc%C3%AAs">
+                  <Button 
+                    className="group bg-[#FF4D4D] hover:bg-[#FF4D4D] text-white px-10 py-7 text-xl rounded-xl transition-all 
+                              hover:scale-105 hover:shadow-2xl hover:shadow-[#FF4D4D]/30 animate-pop-in [animation-delay:0.5s]
+                              focus:ring-4 focus:ring-[#FF4D4D]/50 cursor-pointer"
+                  >
+                    <span className="flex items-center gap-3">
+                      Quero um site que vende 
+                      <ChevronRight className="h-6 w-6 transition-transform group-hover:translate-x-1" />
+                    </span>
+                  </Button>
+                </Link>
               </div>
 
               {/* Coluna Direita - Dashboard + Mockup */}
@@ -332,12 +335,14 @@ export default function Home() {
               </div>
 
               {/* Conteúdo principal */}
-              <div className="relative z-20 flex items-center gap-4">
-                <span className="text-balance bg-gradient-to-r from-white via-[#BFDBFE] to-white bg-clip-text text-transparent font-semibold tracking-wide drop-shadow-md">
-                  Agendar conversa
-                </span>
-                <ChevronRight className="h-8 w-8 text-[#BFDBFE] transition-transform group-hover:translate-x-3 group-hover:scale-110 duration-300 ease-[cubic-bezier(0.68,-0.55,0.27,1.55)]" />
-              </div>
+              <Link target="_blank" href="https://wa.me/5575983252987?text=Olá, quero agendar uma reunião com vocês a respeito de um projeto, podemos conversar?">
+                <div className="relative z-20 flex items-center gap-4">
+                  <span className="text-balance bg-gradient-to-r from-white via-[#BFDBFE] to-white bg-clip-text text-transparent font-semibold tracking-wide drop-shadow-md">
+                    Agendar conversa
+                  </span>
+                  <ChevronRight className="h-8 w-8 text-[#BFDBFE] transition-transform group-hover:translate-x-3 group-hover:scale-110 duration-300 ease-[cubic-bezier(0.68,-0.55,0.27,1.55)]" />
+                </div>
+              </Link>
 
               {/* Borda interativa */}
               <div className="absolute inset-0 rounded-xl border-2 border-[#2A7AFF]/20 group-hover:border-[#BFDBFE]/40 transition-all duration-500" />
@@ -417,6 +422,7 @@ export default function Home() {
                     <label htmlFor="message" className="block text-sm font-medium text-gray-400 mb-1">Mensagem (opcional)</label>
                     <Textarea id="message" placeholder="Conte-nos um pouco sobre seu projeto" className="bg-[#0A0A0A] border-gray-800" />
                   </div>
+
                   <Button className="w-full bg-[#FF4D4D] hover:bg-[#FF4D4D]/90 text-white py-6 cursor-pointer">
                     Quero Minha Proposta Personalizada
                   </Button>
@@ -817,9 +823,11 @@ export default function Home() {
               <p className="text-white/90 max-w-2xl mx-auto mb-8 text-lg">
                 A Primeira Conversa é Grátis e Sem Compromisso!
               </p>
-              <Button className="bg-white text-[#0A0A0A] hover:bg-white/90 px-8 py-6 text-lg rounded-lg cursor-pointer">
-                Falar com um Especialista Agora <ChevronRight className="ml-2 h-5 w-5" />
-              </Button>
+              <Link target="_blank" href="https://wa.me/5575983252987?text=Ol%C3%A1,%20tenho%20interesse%20em%20criar%20um%20site%20com%20voc%C3%AAs">
+                <Button className="bg-white text-[#0A0A0A] hover:bg-white/90 px-8 py-6 text-lg rounded-lg cursor-pointer">
+                  Falar conosco agora <ChevronRight className="ml-2 h-5 w-5" />
+                </Button>
+              </Link>
             </div>
           </div>
         </section>
@@ -836,28 +844,22 @@ export default function Home() {
                 <span className="text-xl font-bold">Marketilize</span>
               </div>
               <p className="text-gray-400 mb-4">
-                Transformando ideias em resultados digitais desde 2015.
+                Transformando ideias em resultados digitais desde 2024.
               </p>
               <div className="flex gap-4">
-                <a href="#" className="text-gray-400 hover:text-white transition-colors">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
-                </a>
-                <a href="#" className="text-gray-400 hover:text-white transition-colors">
+                <a href="https://www.instagram.com/marketilize/" target="_blank" className="text-gray-400 hover:text-white transition-colors">
                   <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
-                </a>
-                <a href="#" className="text-gray-400 hover:text-white transition-colors">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
                 </a>
               </div>
             </div>
             <div>
               <h4 className="font-bold mb-4">Serviços</h4>
               <ul className="space-y-2">
-                <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Web Design</a></li>
-                <li><a href="#" className="text-gray-400 hover:text-white transition-colors">E-commerce</a></li>
-                <li><a href="#" className="text-gray-400 hover:text-white transition-colors">SEO</a></li>
-                <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Marketing Digital</a></li>
-                <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Manutenção</a></li>
+                <li><a href="#services" className="text-gray-400 hover:text-white transition-colors">Web Design</a></li>
+                <li><a href="#services" className="text-gray-400 hover:text-white transition-colors">E-commerce</a></li>
+                <li><a href="#services" className="text-gray-400 hover:text-white transition-colors">SEO</a></li>
+                <li><a href="#services" className="text-gray-400 hover:text-white transition-colors">Marketing Digital</a></li>
+                <li><a href="#services" className="text-gray-400 hover:text-white transition-colors">Manutenção</a></li>
               </ul>
             </div>
             <div>
@@ -865,17 +867,32 @@ export default function Home() {
               <ul className="space-y-2">
                 <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Sobre Nós</a></li>
                 <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Portfólio</a></li>
-                <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Blog</a></li>
-                <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Carreiras</a></li>
                 <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Contato</a></li>
               </ul>
             </div>
             <div>
               <h4 className="font-bold mb-4">Contato</h4>
               <ul className="space-y-2">
-                <li className="text-gray-400">contato@marketilize.com</li>
-                <li className="text-gray-400">(11) 99999-9999</li>
-                <li className="text-gray-400">São Paulo, SP</li>
+                <li>
+                  <a href="mailto:suporteconstsoft@gmail.com" className="text-gray-400 hover:underline">
+                    suporteconstsoft@gmail.com
+                  </a>
+                </li>
+                <li>
+                  <a href="tel:+5575983252987" className="text-gray-400 hover:underline">
+                    (75) 9 8325-2987
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://www.google.com/maps/place/Feira+de+Santana,+BA"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-gray-400 hover:underline"
+                  >
+                    Feira de Santana, BA
+                  </a>
+                </li>
               </ul>
             </div>
           </div>
@@ -883,10 +900,6 @@ export default function Home() {
             <p className="text-gray-500 text-sm mb-4 md:mb-0">
               &copy; {new Date().getFullYear()} Marketilize. Todos os direitos reservados.
             </p>
-            <div className="flex gap-6">
-              <a href="#" className="text-gray-500 text-sm hover:text-white transition-colors">Termos de Uso</a>
-              <a href="#" className="text-gray-500 text-sm hover:text-white transition-colors">Política de Privacidade</a>
-            </div>
           </div>
         </div>
       </footer>
@@ -939,17 +952,19 @@ export default function Home() {
               <div className="absolute inset-0 rounded-xl bg-white/10 opacity-0 group-hover:opacity-20 transition-opacity duration-300" />
               
               {/* Texto com pequeno movimento no hover */}
-              <span className="relative flex items-center gap-2">
-                Comece agora
-                <svg 
-                  xmlns="http://www.w3.org/2000/svg" 
-                  className="h-5 w-5 mt-0.5 transform group-hover:translate-x-1 transition-transform"
-                  viewBox="0 0 20 20" 
-                  fill="currentColor"
-                >
-                  <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-8.707l-3-3a1 1 0 00-1.414 1.414L10.586 9H7a1 1 0 100 2h3.586l-1.293 1.293a1 1 0 101.414 1.414l3-3a1 1 0 000-1.414z" clipRule="evenodd" />
-                </svg>
-              </span>
+              <Link target="_blank" href="https://wa.me/5575983252987?text=Ol%C3%A1,%20tenho%20interesse%20em%20criar%20um%20site%20com%20voc%C3%AAs">
+                <span className="relative flex items-center gap-2">
+                    Comece agora
+                    <svg 
+                      xmlns="http://www.w3.org/2000/svg" 
+                      className="h-5 w-5 mt-0.5 transform group-hover:translate-x-1 transition-transform"
+                      viewBox="0 0 20 20" 
+                      fill="currentColor"
+                    >
+                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-8.707l-3-3a1 1 0 00-1.414 1.414L10.586 9H7a1 1 0 100 2h3.586l-1.293 1.293a1 1 0 101.414 1.414l3-3a1 1 0 000-1.414z" clipRule="evenodd" />
+                    </svg>
+                </span>
+              </Link>
             </button>
           )}
         </div>

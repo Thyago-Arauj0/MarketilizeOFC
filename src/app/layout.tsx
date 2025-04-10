@@ -20,6 +20,38 @@ export const metadata: Metadata = {
   title: "Marketilize - Transforme Sua Ideia em uma Máquina de Vendas Online",
   description:
     "Desenvolvemos sites, e-commerces e estratégias de marketing que conquistam clientes e escalam seu negócio.",
+  keywords: [
+    "temperos artesanais",
+    "condimentos naturais",
+    "culinária nordestina",
+    "produtos caseiros",
+    "Moinho Nordeste",
+    "ervas e especiarias"
+  ],
+  authors: [{ name: "Marketilize", url: "https://marketilize.com.br" }],
+  creator: "Marketilize",
+  metadataBase: new URL("https://marketilize.com.br"),
+  openGraph: {
+    title: "Marketilize",
+    description: "Desenvolvemos sites, e-commerces e estratégias de marketing que conquistam clientes e escalam seu negócio.",
+    url: "https://marketilize.com.br",
+    siteName: "Marketilize",
+    images: [
+      {
+        url: "/logo.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Marketilize",
+      },
+    ],
+    locale: "pt_BR",
+    type: "website",
+  },
+  icons: {
+    icon: "/favicon.ico",
+    shortcut: "/favicon.ico",
+    apple: "/favicon.ico",
+  },
 };
 
 export default function RootLayout({
@@ -28,7 +60,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="pt-br" suppressHydrationWarning>
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         <ThemeProvider 
           attribute="class" 
