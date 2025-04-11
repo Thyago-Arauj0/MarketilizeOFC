@@ -27,6 +27,40 @@ import { ScrollAnimation } from "@/components/animations/ScrollAnimation";
 import { ContactForm } from "../services/ContactForm";
 import { faqItems } from "@/lib/ArrayFAQ";
 
+const benefits = [
+  {
+    icon: <Code className="text-[#2A7AFF]" />,
+    colorClass: "bg-[#2A7AFF]/10",
+    title: "Design Profissional que Encanta",
+    description: "Sites responsivos e modernos que convertem visitantes em clientes."
+  },
+  {
+    icon: <BarChart className="text-[#FF4D4D]" />,
+    colorClass: "bg-[#FF4D4D]/10",
+    title: "SEO Integrado para Você ser Encontrado",
+    description: "Otimização para mecanismos de busca desde o primeiro dia."
+  },
+  {
+    icon: (
+      <>
+        <Shield className="text-[#2A7AFF]" />
+        <Zap className="text-[#2A7AFF] absolute h-4 w-4" />
+      </>
+    ),
+    colorClass: "bg-[#2A7AFF]/10",
+    title: "Sites Rápidos e Seguros",
+    description: "Performance otimizada e proteção contra ameaças digitais."
+  },
+  {
+    icon: (
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-[#FF4D4D]"><path d="m3 11 18-5v12L3 14v-3z"/><path d="M11.6 16.8a3 3 0 1 1-5.8-1.6"/></svg>
+    ),
+    colorClass: "bg-[#FF4D4D]/10",
+    title: "Marketing Digital Pronto para Ação",
+    description: "Estratégias completas para atrair e converter seu público-alvo."
+  }
+];
+
 export default function Home() {
 
   const [showModal, setShowModal] = useState(false)
@@ -234,50 +268,40 @@ export default function Home() {
         </ScrollAnimation>
         
         <ScrollAnimation
-            animateIn="animate-slide-in-left"
-            animateOut="animate-slide-out-right"
-            threshold={0.5}
-            rootMargin="-50px"
-            className=""
-          >
+          animateIn="animate-slide-in-left"
+          animateOut="animate-slide-out-right"
+          threshold={0.1} // Aumenta a sensibilidade
+          rootMargin="-30px" // Margem menor para mobile
+          className="overflow-visible" // Garante que o conteúdo não seja cortado
+        >
           {/* Benefits Section */}
           <section className="container mx-auto px-4 py-16 md:py-24">
             <div className="text-center mb-16">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4">Por Que Escolher a Marketilize?</h2>
-              <p className="text-gray-400 max-w-2xl mx-auto">
+              <h2 className="text-3xl md:text-4xl font-bold mb-4 px-4">
+                Por Que Escolher a Marketilize?
+              </h2>
+              
+              <p className="text-gray-400 max-w-2xl mx-auto text-lg md:text-xl">
                 Não somos apenas desenvolvedores, somos parceiros do seu crescimento
               </p>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-              <div className="bg-[#111] p-6 rounded-xl border border-gray-800 hover:border-[#2A7AFF]/50 transition-all duration-300">
-                <div className="w-12 h-12 bg-[#2A7AFF]/10 rounded-lg flex items-center justify-center mb-4">
-                  <Code className="text-[#2A7AFF]" />
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 px-4 sm:px-6">
+              {benefits.map((benefit, index) => (
+                <div 
+                  key={index}
+                  className="bg-[#111] p-8 rounded-xl border border-gray-800 hover:border-[#2A7AFF]/50 transition-all duration-300
+                  transform hover:-translate-y-2 mobile-scale-effect" // Efeito de escala mobile
+                >
+                  <div className="w-14 h-14 bg-[#2A7AFF]/10 rounded-lg flex items-center justify-center mb-6">
+                    {benefit.icon}
+                  </div>
+                  <h3 className="text-xl font-bold mb-4">{benefit.title}</h3>
+                  <p className="text-gray-400 text-lg leading-relaxed">
+                    {benefit.description}
+                  </p>
                 </div>
-                <h3 className="text-xl font-bold mb-2">Design Profissional que Encanta</h3>
-                <p className="text-gray-400">Sites responsivos e modernos que convertem visitantes em clientes.</p>
-              </div>
-              <div className="bg-[#111] p-6 rounded-xl border border-gray-800 hover:border-[#FF4D4D]/50 transition-all duration-300">
-                <div className="w-12 h-12 bg-[#FF4D4D]/10 rounded-lg flex items-center justify-center mb-4">
-                  <BarChart className="text-[#FF4D4D]" />
-                </div>
-                <h3 className="text-xl font-bold mb-2">SEO Integrado para Você ser Encontrado</h3>
-                <p className="text-gray-400">Otimização para mecanismos de busca desde o primeiro dia.</p>
-              </div>
-              <div className="bg-[#111] p-6 rounded-xl border border-gray-800 hover:border-[#2A7AFF]/50 transition-all duration-300">
-                <div className="w-12 h-12 bg-[#2A7AFF]/10 rounded-lg flex items-center justify-center mb-4">
-                  <Shield className="text-[#2A7AFF]" />
-                  <Zap className="text-[#2A7AFF] absolute h-4 w-4" />
-                </div>
-                <h3 className="text-xl font-bold mb-2">Sites Rápidos e Seguros</h3>
-                <p className="text-gray-400">Performance otimizada e proteção contra ameaças digitais.</p>
-              </div>
-              <div className="bg-[#111] p-6 rounded-xl border border-gray-800 hover:border-[#FF4D4D]/50 transition-all duration-300">
-                <div className="w-12 h-12 bg-[#FF4D4D]/10 rounded-lg flex items-center justify-center mb-4">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-[#FF4D4D]"><path d="m3 11 18-5v12L3 14v-3z"/><path d="M11.6 16.8a3 3 0 1 1-5.8-1.6"/></svg>
-                </div>
-                <h3 className="text-xl font-bold mb-2">Marketing Digital Pronto para Ação</h3>
-                <p className="text-gray-400">Estratégias completas para atrair e converter seu público-alvo.</p>
-              </div>
+              ))}
             </div>
           </section>
         </ScrollAnimation>
@@ -285,88 +309,130 @@ export default function Home() {
         <ScrollAnimation
           animateIn="animate-fade-in animate-duration-1000"
           animateOut="animate-fade-out animate-duration-500"
+          threshold={0.1}
         >
-        {/* How It Works Section */}
-        <section id="how-it-works" className="container mx-auto px-4 py-20 md:py-32 bg-[#0D0D0D] rounded-[2.5rem] border border-white/5">
-
-          <div className="text-center mb-20 space-y-6">
-            <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-[#2A7AFF] via-[#FF4D4D] to-[#FF4D4D] bg-clip-text text-transparent">
-              Como Funciona
-            </h2>
-            <p className="text-gray-400/90 text-xl max-w-3xl mx-auto leading-relaxed">
-              Um processo simples e transparente para transformar sua visão em realidade
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-12 relative">
-            {/* Linha de conexão animada */}
-            <div className="hidden md:block absolute top-1/2 left-0 right-0 h-1 bg-gradient-to-r from-[#2A7AFF] via-[#B74DFF] to-[#FF4D4D] -translate-y-1/2 z-0 overflow-hidden">
-              <div className="absolute inset-0 bg-[length:200%_100%] animate-flow-line"></div>
+          {/* How It Works Section */}
+          <section id="how-it-works" className="container mx-auto px-4 py-20 md:py-32 bg-[#0D0D0D] rounded-[2.5rem] border border-white/5 relative overflow-hidden">
+            
+            {/* Efeito de partículas de fundo */}
+            <div className="absolute inset-0 overflow-hidden opacity-20">
+              {[...Array(12)].map((_, i) => (
+                <div 
+                  key={i}
+                  className="absolute rounded-full bg-gradient-to-r from-[#2A7AFF] to-[#FF4D4D]"
+                  style={{
+                    width: `${Math.random() * 6 + 2}px`,
+                    height: `${Math.random() * 6 + 2}px`,
+                    top: `${Math.random() * 100}%`,
+                    left: `${Math.random() * 100}%`,
+                    animation: `float ${Math.random() * 10 + 10}s linear infinite`,
+                    animationDelay: `${Math.random() * 5}s`
+                  }}
+                />
+              ))}
             </div>
 
-            {[
-              { icon: MessageSquare, title: "Conversa Sem Compromisso", text: "Entendemos suas necessidades e objetivos de negócio." },
-              { icon: FileCheck, title: "Projeto Sob Medida", text: "Criamos uma solução personalizada para seu negócio." },
-              { icon: Code, title: "Desenvolvimento com Transparência", text: "Acompanhe cada etapa do processo de criação." },
-              { icon: Rocket, title: "Seu Site no Ar e Gerando Leads", text: "Lançamento e estratégias contínuas de crescimento." }
-            ].map((step, index) => (
-              <div key={index} className="relative z-10 group">
-                <div className="flex flex-col items-center text-center p-8 bg-white/5 rounded-2xl backdrop-blur-sm border border-white/10 hover:border-[#2A7AFF]/30 transition-all duration-300 hover:bg-[#0D0D0D]/90 hover:-translate-y-2">
-                  {/* Glow effect */}
-                  <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-[radial-gradient(400px_at_50%_50%,#2A7AFF/10%,transparent)]"></div>
+            <div className="text-center mb-20 space-y-6 relative z-10">
+              <h2 className="text-4xl md:text-5xl font-bold mb-4 px-4 bg-gradient-to-r from-[#2A7AFF] via-[#FF4D4D] to-[#FF4D4D] bg-clip-text text-transparent">
+                Como Funciona?
+              </h2>
+              <p className="text-gray-300 max-w-2xl mx-auto text-xl md:text-2xl leading-relaxed">
+                Um processo simples e transparente para transformar sua visão em realidade
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-4 gap-8 md:gap-12 relative z-10">
+              {/* Linha de conexão animada aprimorada */}
+              <div className="hidden md:block absolute top-1/2 left-0 right-0 h-1.5 bg-gradient-to-r from-[#2A7AFF] via-[#B74DFF] to-[#FF4D4D] -translate-y-1/2 z-0 overflow-hidden">
+                <div className="absolute inset-0 bg-[length:200%_100%] animate-flow-line bg-gradient-to-r from-[#2A7AFF] via-[#B74DFF] to-[#FF4D4D]"></div>
+                <div className="absolute inset-0 bg-white/10 backdrop-blur-[1px]"></div>
+              </div>
+
+              {[
+                { 
+                  icon: MessageSquare, 
+                  title: "Conversa Sem Compromisso", 
+                  text: "Entendemos suas necessidades e objetivos de negócio em uma reunião descontraída.",
+                  gradient: "from-[#2A7AFF] to-[#2A7AFF]/80"
+                },
+                { 
+                  icon: FileCheck, 
+                  title: "Projeto Sob Medida", 
+                  text: "Criamos uma solução personalizada com protótipos para sua aprovação.",
+                  gradient: "from-[#2A7AFF] to-[#B74DFF]"
+                },
+                { 
+                  icon: Code, 
+                  title: "Desenvolvimento", 
+                  text: "Implementação transparente com atualizações semanais e testes rigorosos.",
+                  gradient: "from-[#B74DFF] to-[#FF4D4D]"
+                },
+                { 
+                  icon: Rocket, 
+                  title: "Lançamento & Crescimento", 
+                  text: "Publicação do projeto e estratégias contínuas para escalar seus resultados.",
+                  gradient: "from-[#FF4D4D] to-[#FF4D4D]/80"
+                }
+              ].map((step, index) => (
+                <div key={index} className="relative z-10 group cursor-pointer ">
+                {/* Card sólido sem transparência */}
+                <div className="flex flex-col items-center text-center p-6 bg-[#0D0D0D] rounded-2xl border border-white/10 hover:border-[#2A7AFF]/50 transition-all duration-300 hover:-translate-y-2 shadow-xl hover:shadow-[#2A7AFF]/20  ">
                   
-                  <div className="relative mb-6">
-                    <div className="absolute -inset-2 bg-gradient-to-br from-[#2A7AFF] to-[#FF4D4D] rounded-full blur-xl opacity-20 group-hover:opacity-30 transition-opacity"></div>
-                    <div className={`w-20 h-20 rounded-2xl flex items-center justify-center bg-gradient-to-br ${
-                      index === 0 ? 'from-[#2A7AFF] to-[#2A7AFF]/80' :
-                      index === 1 ? 'from-[#2A7AFF] to-[#B74DFF]' :
-                      index === 2 ? 'from-[#B74DFF] to-[#FF4D4D]' :
-                      'from-[#FF4D4D] to-[#FF4D4D]/80'
-                    } shadow-2xl shadow-[#2A7AFF]/20`}>
-                      <step.icon className="h-8 w-8 text-white" strokeWidth={1.5} />
+                  {/* Efeito de brilho dinâmico (mantido mas com fundo sólido) */}
+                  <div className="absolute inset-0 rounded-2xl overflow-hidden">
+                    <div className="absolute inset-0 bg-[#0D0D0D] rounded-2xl"></div>
+                    <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-[radial-gradient(200px_at_50%_50%,rgba(42,122,255,0.1),transparent)]"></div>
+                  </div>
+                  
+                  {/* Ícone com gradiente */}
+                  <div className="relative mb-5">
+                    <div className="absolute -inset-2 bg-gradient-to-br from-[#2A7AFF] to-[#FF4D4D] rounded-full blur-md opacity-20 group-hover:opacity-40 transition-opacity"></div>
+                    <div className={`w-12 h-12 rounded-xl flex items-center justify-center bg-gradient-to-br ${step.gradient} shadow-lg relative z-10`}>
+                      <step.icon className="h-5 w-5 text-white" strokeWidth={1.5} />
                     </div>
                   </div>
-
-                  <h3 className="text-2xl font-semibold mb-3 bg-gradient-to-r from-[#2A7AFF] via-[#FF4D4D] to-[#FF4D4D] bg-clip-text text-transparent">
-                    {step.title}
-                  </h3>
-                  <p className="text-gray-400/80 leading-relaxed text-balance">{step.text}</p>
+              
+                  {/* Conteúdo do card */}
+                  <div className="space-y-3 relative z-10">
+                    <h3 className="text-xl font-semibold bg-gradient-to-r from-[#2A7AFF] via-[#FF4D4D] to-[#FF4D4D] bg-clip-text text-transparent">
+                      {step.title}
+                    </h3>
+                    <p className="text-gray-300/90 text-sm leading-relaxed text-balance">
+                      {step.text}
+                    </p>
+                  </div>
+              
+                  {/* Indicador de passo */}
+                  <div className="mt-5 w-7 h-7 rounded-full bg-[#2A7AFF] flex items-center justify-center text-white text-sm font-medium border border-white/20 relative z-10">
+                    {index + 1}
+                  </div>
                 </div>
               </div>
-            ))}
-          </div>
+              ))}
+            </div>
 
-          <div className="text-center mt-20">
-            <Button className="group relative overflow-hidden bg-gradient-to-br from-[#2A7AFF] via-[#3B82F6] to-[#1D4ED8] hover:bg-[length:400%_400%] text-white px-10 py-7 text-2xl rounded-xl transition-all duration-500 hover:scale-[1.03] hover:shadow-2xl hover:shadow-[#1D4ED8]/50 cursor-pointer">
-              {/* Efeito de profundidade */}
-              <div className="absolute inset-0 bg-[radial-gradient(200px_at_50%_150%,rgba(255,255,255,0.15),transparent)] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-
-              {/* Camada de brilho dinâmico */}
-              <div className="absolute inset-0 opacity-0 group-hover:opacity-30 transition-opacity duration-500">
-                <div className="absolute top-1/2 left-1/2 w-[200%] h-[200%] bg-[conic-gradient(from_90deg_at_50%_50%,#2A7AFF,#3B82F6,#1D4ED8,transparent)] animate-rotate-bg -translate-x-1/2 -translate-y-1/2" />
-              </div>
-
-              {/* Conteúdo principal */}
-              <Link target="_blank" href="https://wa.me/5575983252987?text=Olá, quero agendar uma reunião com vocês a respeito de um projeto, podemos conversar?">
-                <div className="relative z-20 flex items-center gap-4">
-                  <span className="text-balance bg-gradient-to-r from-white via-[#BFDBFE] to-white bg-clip-text text-transparent font-semibold tracking-wide drop-shadow-md">
-                    Agendar conversa
-                  </span>
-                  <ChevronRight className="h-8 w-8 text-[#BFDBFE] transition-transform group-hover:translate-x-3 group-hover:scale-110 duration-300 ease-[cubic-bezier(0.68,-0.55,0.27,1.55)]" />
+            <div className="text-center mt-20 relative z-10">
+              <Button className="group relative overflow-hidden bg-gradient-to-br from-[#2A7AFF] via-[#3B82F6] to-[#1D4ED8] hover:bg-[length:400%_400%] text-white px-12 py-8 text-2xl rounded-xl transition-all duration-500 hover:scale-[1.03] hover:shadow-2xl hover:shadow-[#1D4ED8]/50 cursor-pointer">
+                {/* Efeitos visuais aprimorados */}
+                <div className="absolute inset-0 bg-[radial-gradient(300px_at_50%_150%,rgba(255,255,255,0.2),transparent)] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                
+                <div className="absolute inset-0 opacity-0 group-hover:opacity-40 transition-opacity duration-700">
+                  <div className="absolute top-1/2 left-1/2 w-[300%] h-[300%] bg-[conic-gradient(from_90deg_at_50%_50%,#2A7AFF,#3B82F6,#1D4ED8,transparent)] animate-rotate-bg -translate-x-1/2 -translate-y-1/2" />
                 </div>
-              </Link>
 
-              {/* Borda interativa */}
-              <div className="absolute inset-0 rounded-xl border-2 border-[#2A7AFF]/20 group-hover:border-[#BFDBFE]/40 transition-all duration-500" />
+                <Link href="https://wa.me/5575983252987?text=Olá, quero agendar uma reunião sobre desenvolvimento web" target="_blank">
+                  <div className="relative z-20 flex items-center gap-4">
+                    <span className="text-balance bg-gradient-to-r from-white via-[#BFDBFE] to-white bg-clip-text text-transparent font-bold tracking-wide drop-shadow-md">
+                      Agendar conversa
+                    </span>
+                    <ChevronRight className="h-8 w-8 text-[#BFDBFE] transition-transform group-hover:translate-x-3 group-hover:scale-110 duration-300 ease-[cubic-bezier(0.68,-0.55,0.27,1.55)]" />
+                  </div>
+                </Link>
 
-              {/* Efeito de partículas aquáticas */}
-              <div className="absolute inset-0 opacity-0 group-hover:opacity-30 transition-opacity duration-300">
-                <div className="absolute top-0 left-1/4 w-1 h-1 bg-[#BFDBFE] rounded-full animate-bubble" />
-                <div className="absolute top-1/3 right-8 w-1.5 h-1.5 bg-[#BFDBFE] rounded-full animate-bubble-delayed" />
-              </div>
-            </Button>
-          </div>
-        </section>
+                <div className="absolute inset-0 rounded-xl border-2 border-[#2A7AFF]/30 group-hover:border-[#BFDBFE]/50 transition-all duration-500" />
+              </Button>
+            </div>
+          </section>
         </ScrollAnimation>
 
         
@@ -841,7 +907,16 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             <div>
               <div className="flex items-center gap-2 mb-4">
-                <div className="w-10 h-10 rounded-full bg-gradient-to-r from-[#2A7AFF] to-[#FF4D4D] flex items-center justify-center text-white font-bold">M</div>
+              <div className="relative group">
+              <div className="absolute -inset-1 bg-gradient-to-r from-[#2A7AFF] to-[#FF4D4D] rounded-full blur opacity-30 group-hover:opacity-50 transition-opacity duration-300" />
+              <a href="/" className="relative block">
+                <img 
+                  src="/favicon.ico" // Altere para o caminho correto da sua logo
+                  alt="Marketilize Logo"
+                  className="w-12 h-12 rounded-full hover:scale-105 transition-transform"
+                />
+              </a>
+            </div>
                 <span className="text-xl font-bold">Marketilize</span>
               </div>
               <p className="text-gray-400 mb-4">
