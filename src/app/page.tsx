@@ -24,6 +24,8 @@ import ScrollHeader from "@/components/animations/ScrollHeader";
 import DisplayedText from "@/components/animations/DisplayedText"
 import { Modal } from "@/components/ui/modal"
 import { ScrollAnimation } from "@/components/animations/ScrollAnimation";
+import { ContactForm } from "../services/ContactForm";
+import { faqItems } from "@/lib/ArrayFAQ";
 
 export default function Home() {
 
@@ -64,21 +66,31 @@ export default function Home() {
     <div className="min-h-screen bg-[#0A0A0A] text-white">
       {/* Header */}
       <header className="bg-gradient-to-b from-white/5 to-transparent border-b border-[#2A7AFF]/10">
-        <nav className="container mx-auto px-4 py-5 md:py-6">
-          <div className="flex items-center gap-3 hover:gap-4 transition-all duration-300">
-            <div className="relative group">
-              <div className="absolute -inset-1 bg-gradient-to-r from-[#2A7AFF] to-[#FF4D4D] rounded-full blur opacity-30 group-hover:opacity-50 transition-opacity duration-300" />
-              <div className="relative w-12 h-12 rounded-full bg-gradient-to-br from-[#2A7AFF] to-[#FF4D4D] flex items-center justify-center shadow-lg hover:shadow-[#2A7AFF]/30 transition-shadow">
-                <span className="text-xl font-semibold text-white drop-shadow-md">M</span>
-              </div>
-            </div>
-            <span className="text-2xl font-bold bg-gradient-to-r from-[#2A7AFF] via-[#FF4D4D] to-[#FF4D4D] bg-clip-text text-transparent tracking-tight">
-              Marketilize
-              <span className="ml-2 text-[#FF4D4D] text-xl align-super">®</span>
-            </span>
-          </div>
-        </nav>
-      </header>
+  <nav className="container mx-auto px-4 py-5 md:py-6">
+    <div className="flex items-center gap-3 hover:gap-4 transition-all duration-300">
+      {/* Logo */}
+      <div className="relative group">
+        <div className="absolute -inset-1 bg-gradient-to-r from-[#2A7AFF] to-[#FF4D4D] rounded-full blur opacity-30 group-hover:opacity-50 transition-opacity duration-300" />
+        <a href="/" className="relative block">
+          <img 
+            src="/favicon.ico" // Altere para o caminho correto da sua logo
+            alt="Marketilize Logo"
+            className="w-12 h-12 rounded-full hover:scale-105 transition-transform"
+          />
+        </a>
+      </div>
+
+      {/* Texto da marca */}
+      <span className="text-2xl font-bold bg-gradient-to-r from-[#2A7AFF] via-[#FF4D4D] to-[#FF4D4D] bg-clip-text text-transparent tracking-tight">
+        Marketilize
+        <span className="ml-2 text-[#FF4D4D] text-xl align-super">®</span>
+      </span>
+
+      {/* Favicon (adicionar no head do documento) */}
+      <link rel="icon" href="/favicon.ico" />
+    </div>
+  </nav>
+</header>
 
       <ScrollHeader />
       <main>
@@ -388,7 +400,7 @@ export default function Home() {
                 </div>
               </div>
               <div className="bg-[#111] p-6 rounded-xl border border-gray-800">
-                <form className="space-y-4">
+                {/* <form className="space-y-4">
                   <div>
                     <label htmlFor="name" className="block text-sm font-medium text-gray-400 mb-1">Nome</label>
                     <Input id="name" placeholder="Seu nome completo" className="bg-[#0A0A0A] border-gray-800" />
@@ -429,7 +441,8 @@ export default function Home() {
                   <p className="text-xs text-gray-500 text-center">
                     Seus dados estão protegidos. Nada de spam!
                   </p>
-                </form>
+                </form> */}
+                <ContactForm></ContactForm>
               </div>
             </div>
           </div>
@@ -758,56 +771,44 @@ export default function Home() {
         </section>
         </ScrollAnimation>
 
+       
+
         <ScrollAnimation
-            animateIn="animate-slide-in-left"
-            animateOut="animate-slide-out-right"
-            threshold={0.5}
-            rootMargin="-50px"
-            className=""
-          >
-        {/* FAQ Section */}
-        <section id="faq" className="container mx-auto px-4 py-16 md:py-24">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Perguntas Frequentes</h2>
-            <p className="text-gray-400 max-w-2xl mx-auto">
-              Tire suas dúvidas sobre nossos serviços
-            </p>
-          </div>
-          <div className="max-w-3xl mx-auto">
-            <Accordion type="single" collapsible className="space-y-4">
-              <AccordionItem value="item-1" className="bg-[#111] rounded-xl border border-gray-800 px-6">
-                <AccordionTrigger className="text-left">Quanto tempo leva para desenvolver um site?</AccordionTrigger>
-                <AccordionContent className="text-gray-300">
-                  O prazo de desenvolvimento varia de acordo com a complexidade do projeto. Uma landing page simples pode levar de 1 a 2 semanas, enquanto um e-commerce completo pode levar de 4 a 8 semanas. Durante nossa conversa inicial, forneceremos um cronograma detalhado para seu projeto específico.
-                </AccordionContent>
-              </AccordionItem>
-              <AccordionItem value="item-2" className="bg-[#111] rounded-xl border border-gray-800 px-6">
-                <AccordionTrigger className="text-left">O SEO já está incluído no pacote?</AccordionTrigger>
-                <AccordionContent className="text-gray-300">
-                  Sim! Todos os nossos sites são desenvolvidos com otimização SEO básica incluída. Isso envolve estrutura adequada de URLs, meta tags, velocidade de carregamento otimizada e código limpo. Para estratégias de SEO mais avançadas e contínuas, oferecemos pacotes específicos que podem ser contratados separadamente.
-                </AccordionContent>
-              </AccordionItem>
-              <AccordionItem value="item-3" className="bg-[#111] rounded-xl border border-gray-800 px-6">
-                <AccordionTrigger className="text-left">Posso redesenhar meu site atual com vocês?</AccordionTrigger>
-                <AccordionContent className="text-gray-300">
-                  Absolutamente! Realizamos redesigns de sites existentes mantendo ou melhorando o SEO atual. Analisamos o que está funcionando bem no seu site atual e identificamos oportunidades de melhoria tanto no design quanto na performance e conversão.
-                </AccordionContent>
-              </AccordionItem>
-              <AccordionItem value="item-4" className="bg-[#111] rounded-xl border border-gray-800 px-6">
-                <AccordionTrigger className="text-left">Como funciona o processo de pagamento?</AccordionTrigger>
-                <AccordionContent className="text-gray-300">
-                  Trabalhamos com um modelo de pagamento em etapas. Geralmente, 30% do valor é pago no início do projeto, 30% na aprovação do design e 40% na entrega final. Para projetos maiores, podemos criar um plano de pagamento personalizado. Também oferecemos opções de parcelamento em até 12x no cartão de crédito.
-                </AccordionContent>
-              </AccordionItem>
-              <AccordionItem value="item-5" className="bg-[#111] rounded-xl border border-gray-800 px-6">
-                <AccordionTrigger className="text-left">Vocês oferecem suporte após o lançamento do site?</AccordionTrigger>
-                <AccordionContent className="text-gray-300">
-                  Sim, oferecemos planos de manutenção mensal que incluem atualizações de segurança, backups regulares, pequenas alterações de conteúdo e suporte técnico prioritário. Isso garante que seu site permaneça seguro, atualizado e funcionando perfeitamente.
-                </AccordionContent>
-              </AccordionItem>
-            </Accordion>
-          </div>
-        </section>
+          animateIn="animate-slide-in-left"
+          animateOut="animate-slide-out-right"
+          threshold={0.5}
+          rootMargin="-50px"
+        >
+          {/* FAQ Section */}
+          <section id="faq" className="container mx-auto px-4 py-16 md:py-28 lg:py-32">
+            <div className="text-center mb-16 lg:mb-20">
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 lg:mb-6">
+                Perguntas Frequentes
+              </h2>
+              <p className="text-gray-400 max-w-2xl mx-auto lg:text-lg">
+                Tire suas dúvidas sobre nossos serviços
+              </p>
+            </div>
+            
+            <div className="max-w-3xl lg:max-w-5xl xl:max-w-6xl mx-auto">
+              <Accordion type="single" collapsible className="space-y-4 md:space-y-6">
+                {faqItems.map((item, index) => (
+                  <AccordionItem
+                    key={item.value}
+                    value={item.value}
+                    className="bg-[#111] rounded-xl border border-gray-800 px-6 md:px-8 transition-all hover:border-[#2A7AFF]/30 "
+                  >
+                    <AccordionTrigger className="text-left md:text-lg font-medium py-4 hover:text-[#2A7AFF] cursor-pointer">
+                      {item.question}
+                    </AccordionTrigger>
+                    <AccordionContent className="text-gray-300 md:text-base pb-4 leading-relaxed">
+                      {item.answer}
+                    </AccordionContent>
+                  </AccordionItem>
+                ))}
+              </Accordion>
+            </div>
+          </section>
         </ScrollAnimation>
 
         
@@ -824,7 +825,7 @@ export default function Home() {
                 A Primeira Conversa é Grátis e Sem Compromisso!
               </p>
               <Link target="_blank" href="https://wa.me/5575983252987?text=Ol%C3%A1,%20tenho%20interesse%20em%20criar%20um%20site%20com%20voc%C3%AAs">
-                <Button className="bg-white text-[#0A0A0A] hover:bg-white/90 px-8 py-6 text-lg rounded-lg cursor-pointer">
+                <Button className="bg-white text-[#0A0A0A] hover:bg-white/90 px-8 py-6 text-lg rounded-lg cursor-pointer transition-all duration-500 hover:scale-105">
                   Falar conosco agora <ChevronRight className="ml-2 h-5 w-5" />
                 </Button>
               </Link>
@@ -852,7 +853,7 @@ export default function Home() {
                 </a>
               </div>
             </div>
-            <div>
+            {/* <div>
               <h4 className="font-bold mb-4">Serviços</h4>
               <ul className="space-y-2">
                 <li><a href="#services" className="text-gray-400 hover:text-white transition-colors">Web Design</a></li>
@@ -869,7 +870,7 @@ export default function Home() {
                 <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Portfólio</a></li>
                 <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Contato</a></li>
               </ul>
-            </div>
+            </div> */}
             <div>
               <h4 className="font-bold mb-4">Contato</h4>
               <ul className="space-y-2">
@@ -906,9 +907,11 @@ export default function Home() {
 
       {/* Chat Button */}
       <div className="fixed bottom-6 right-6 z-50">
-        <Button className="w-14 h-14 rounded-full bg-gradient-to-r from-[#2A7AFF] to-[#FF4D4D] p-0 shadow-lg">
+        <Link target="_blank" href="https://wa.me/5575983252987?text=Ol%C3%A1,%20tenho%20interesse%20em%20criar%20um%20site%20com%20voc%C3%AAs">
+          <Button className="w-14 h-14 rounded-full bg-gradient-to-r from-[#2A7AFF] to-[#FF4D4D] p-0 shadow-lg cursor-pointer hover:scale-105">
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-white"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
-        </Button>
+          </Button>
+        </Link>
       </div>
 
       <Modal isOpen={showModal} onClose={handleCloseModal}>

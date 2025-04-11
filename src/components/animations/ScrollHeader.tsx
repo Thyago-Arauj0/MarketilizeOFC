@@ -56,8 +56,15 @@ export default function ScrollHeader() {
         <div className="flex justify-between items-center bg-[#0F0F0F]/95 backdrop-blur-lg rounded-2xl p-4 border border-[#1F1F1F] shadow-xl transition-transform duration-300 hover:scale-[1.005]">
           {/* Logo */}
           <div className="flex items-center gap-3 group">
-            <div className="w-12 h-12 rounded-xl bg-gradient-to-r from-[#2A7AFF] to-[#FF4D4D] flex items-center justify-center shadow-lg hover:shadow-[#2A7AFF]/30 transition-shadow">
-              <span className="text-2xl font-bold text-white">M</span>
+            <div className="relative group">
+              <div className="absolute -inset-1 bg-gradient-to-r from-[#2A7AFF] to-[#FF4D4D] rounded-full blur opacity-30 group-hover:opacity-50 transition-opacity duration-300" />
+              <a href="/" className="relative block">
+                <img 
+                  src="/favicon.ico" // Altere para o caminho correto da sua logo
+                  alt="Marketilize Logo"
+                  className="w-12 h-12 rounded-full hover:scale-105 transition-transform"
+                />
+              </a>
             </div>
             <span className="text-2xl font-bold bg-gradient-to-r from-[#2A7AFF] to-[#FF4D4D] bg-clip-text text-transparent">
               Marketilize
@@ -70,7 +77,7 @@ export default function ScrollHeader() {
               {[
                 { href: "#services", icon: Briefcase, text: "Serviços" },
                 { href: "#how-it-works", icon: Settings, text: "Como Funciona" },
-                { href: "#testimonials", icon: Star, text: "Depoimentos" },
+                // { href: "#testimonials", icon: Star, text: "Depoimentos" },
                 { href: "#faq", icon: HelpCircle, text: "FAQ" },
               ].map((item, index) => (
                 <Link
@@ -85,14 +92,16 @@ export default function ScrollHeader() {
                 </Link>
               ))}
             </div>
-            
-            <Button 
-              className="ml-2 bg-gradient-to-r from-[#FF4D4D] to-[#FF6B6B] hover:from-[#FF6B6B] hover:to-[#FF4D4D] shadow-lg hover:shadow-[#FF4D4D]/30 transition-all cursor-pointer"
-              size="lg"
-            >
-              <Mail className="h-5 w-5 mr-2" />
-              <span className="font-semibold">Contato</span>
-            </Button>
+
+            <a href="mailto:suporteconstsoft@gmail.com">
+              <Button 
+                className="ml-2 bg-gradient-to-r from-[#FF4D4D] to-[#FF6B6B] hover:from-[#FF6B6B] hover:to-[#FF4D4D] shadow-lg hover:shadow-[#FF4D4D]/30 transition-all cursor-pointer"
+                size="lg"
+              >
+                <Mail className="h-5 w-5 mr-2" />
+                <span className="font-semibold">Contato</span>
+              </Button>
+            </a>
           </nav>
 
           {/* Mobile Menu */}
@@ -114,7 +123,7 @@ export default function ScrollHeader() {
                   {[
                     { href: "#services", icon: Briefcase, text: "Serviços" },
                     { href: "#how-it-works", icon: Settings, text: "Como Funciona" },
-                    { href: "#testimonials", icon: Star, text: "Depoimentos" },
+                    // { href: "#testimonials", icon: Star, text: "Depoimentos" },
                     { href: "#faq", icon: HelpCircle, text: "FAQ" },
                   ].map((item, index) => (
                     <Link
@@ -132,14 +141,17 @@ export default function ScrollHeader() {
                 </div>
                 
                 <div className="border-t border-[#1F1F1F] p-2">
-                  <Button 
-                    className="w-full bg-gradient-to-r from-[#FF4D4D] to-[#FF6B6B] hover:from-[#FF6B6B] hover:to-[#FF4D4D]"
-                    size="sm"
-                  >
-                    <Mail className="h-4 w-4 mr-2" />
-                    Contato
-                  </Button>
+                  <a href="mailto:suporteconstsoft@gmail.com">
+                    <Button 
+                      className="w-full bg-gradient-to-r from-[#FF4D4D] to-[#FF6B6B] hover:from-[#FF6B6B] hover:to-[#FF4D4D]"
+                      size="sm"
+                    >
+                      <Mail className="h-4 w-4 mr-2" />
+                      Contato
+                    </Button>
+                  </a>
                 </div>
+                
               </div>
             </div>
           </div>
