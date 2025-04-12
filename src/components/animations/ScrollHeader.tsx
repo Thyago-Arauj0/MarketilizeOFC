@@ -60,7 +60,7 @@ export default function ScrollHeader() {
               <div className="absolute -inset-1 bg-gradient-to-r  rounded-full blur opacity-30 group-hover:opacity-50 transition-opacity duration-300" />
               <a href="/" className="relative block">
                 <img 
-                  src="/logo.png" // Altere para o caminho correto da sua logo
+                  src="/logo2.png" // Altere para o caminho correto da sua logo
                   alt="Marketilize Logo"
                   className="w-12 h-12 rounded-full hover:scale-105 transition-transform"
                 />

@@ -107,18 +107,12 @@ export default function Home() {
               <div className="absolute -inset-1 bg-gradient-to-r rounded-full blur  group-hover:opacity-50 transition-opacity duration-300" />
               <a href="/" className="relative block">
                 <img 
-                  src="/logo.png" // Altere para o caminho correto da sua logo
+                  src="/marketilize.png" // Altere para o caminho correto da sua logo
                   alt="Marketilize Logo"
-                  className="w-12 h-12 rounded-full hover:scale-105 transition-transform"
+                  className="w-36 h-auto hover:scale-105 transition-transform"
                 />
               </a>
             </div>
-
-            {/* Texto da marca */}
-            <span className="text-2xl font-bold bg-gradient-to-r text-white bg-clip-text text-transparent tracking-tight">
-              Marketilize
-              <span className="ml-2 text-white text-xl align-super">®</span>
-            </span>
 
             {/* Favicon (adicionar no head do documento) */}
             <link rel="icon" href="/favicon.ico" />
@@ -908,13 +902,12 @@ export default function Home() {
               <div className="absolute -inset-1 bg-gradient-to-r rounded-full blur opacity-30 group-hover:opacity-50 transition-opacity duration-300" />
               <a href="/" className="relative block">
                 <img 
-                  src="/logo.png" // Altere para o caminho correto da sua logo
+                  src="/marketilize.png" // Altere para o caminho correto da sua logo
                   alt="Marketilize Logo"
-                  className="w-12 h-12 rounded-full hover:scale-105 transition-transform"
+                  className="w-48 h-auto rounded-full hover:scale-105 transition-transform"
                 />
               </a>
             </div>
-                <span className="text-xl font-bold">Marketilize</span>
               </div>
               <p className="text-gray-400 mb-4">
                 Transformando ideias em resultados digitais desde 2024.
