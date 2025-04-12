@@ -100,31 +100,31 @@ export default function Home() {
     <div className="min-h-screen bg-[#0A0A0A] text-white">
       {/* Header */}
       <header className="bg-gradient-to-b from-white/5 to-transparent border-b border-[#2A7AFF]/10">
-  <nav className="container mx-auto px-4 py-5 md:py-6">
-    <div className="flex items-center gap-3 hover:gap-4 transition-all duration-300">
-      {/* Logo */}
-      <div className="relative group">
-        <div className="absolute -inset-1 bg-gradient-to-r from-[#2A7AFF] to-[#FF4D4D] rounded-full blur opacity-30 group-hover:opacity-50 transition-opacity duration-300" />
-        <a href="/" className="relative block">
-          <img 
-            src="/favicon.ico" // Altere para o caminho correto da sua logo
-            alt="Marketilize Logo"
-            className="w-12 h-12 rounded-full hover:scale-105 transition-transform"
-          />
-        </a>
-      </div>
+        <nav className="container mx-auto px-4 py-5 md:py-6">
+          <div className="flex items-center gap-3 hover:gap-4 transition-all duration-300">
+            {/* Logo */}
+            <div className="relative group">
+              <div className="absolute -inset-1 bg-gradient-to-r rounded-full blur  group-hover:opacity-50 transition-opacity duration-300" />
+              <a href="/" className="relative block">
+                <img 
+                  src="/logo.png" // Altere para o caminho correto da sua logo
+                  alt="Marketilize Logo"
+                  className="w-12 h-12 rounded-full hover:scale-105 transition-transform"
+                />
+              </a>
+            </div>
 
-      {/* Texto da marca */}
-      <span className="text-2xl font-bold bg-gradient-to-r from-[#2A7AFF] via-[#FF4D4D] to-[#FF4D4D] bg-clip-text text-transparent tracking-tight">
-        Marketilize
-        <span className="ml-2 text-[#FF4D4D] text-xl align-super">®</span>
-      </span>
+            {/* Texto da marca */}
+            <span className="text-2xl font-bold bg-gradient-to-r text-white bg-clip-text text-transparent tracking-tight">
+              Marketilize
+              <span className="ml-2 text-white text-xl align-super">®</span>
+            </span>
 
-      {/* Favicon (adicionar no head do documento) */}
-      <link rel="icon" href="/favicon.ico" />
-    </div>
-  </nav>
-</header>
+            {/* Favicon (adicionar no head do documento) */}
+            <link rel="icon" href="/favicon.ico" />
+          </div>
+        </nav>
+      </header>
 
       <ScrollHeader />
       <main>
@@ -445,7 +445,7 @@ export default function Home() {
           >
         {/* Lead Capture Section */}
         <section className="container mx-auto px-4 py-16 md:py-24">
-          <div className="bg-gradient-to-r from-[#0F1A2A] to-[#1A0F0F] rounded-3xl p-4 py-8  md:p-12">
+          <div className="bg-gradient-to-r bg-[#0D0D0D] rounded-[2.5rem] border border-white/5 p-4 py-8  md:p-12">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
               <div className="space-y-6">
                 <h2 className="text-3xl md:text-4xl font-bold">Pronto para impulsionar seu negócio?</h2>
@@ -628,12 +628,12 @@ export default function Home() {
           </div>
           <Tabs defaultValue="web" className="w-full">
             <TabsList className="grid w-full grid-cols-2 md:grid-cols-4 mb-8">
-              <TabsTrigger value="web" className="data-[state=active]:bg-[#2A7AFF] data-[state=active]:text-white">Web Design</TabsTrigger>
-              <TabsTrigger value="seo" className="data-[state=active]:bg-[#2A7AFF] data-[state=active]:text-white">SEO & Tráfego</TabsTrigger>
-              <TabsTrigger value="marketing" className="data-[state=active]:bg-[#2A7AFF] data-[state=active]:text-white">Marketing Digital</TabsTrigger>
-              <TabsTrigger value="support" className="data-[state=active]:bg-[#2A7AFF] data-[state=active]:text-white">Manutenção</TabsTrigger>
+              <TabsTrigger value="web" className="data-[state=active]:bg-[#2A7AFF] data-[state=active]:text-white cursor-pointer">Web Design</TabsTrigger>
+              <TabsTrigger value="seo" className="data-[state=active]:bg-[#2A7AFF] data-[state=active]:text-white cursor-pointer">SEO & Tráfego</TabsTrigger>
+              <TabsTrigger value="marketing" className="data-[state=active]:bg-[#2A7AFF] data-[state=active]:text-white cursor-pointer">Marketing Digital</TabsTrigger>
+              <TabsTrigger value="support" className="data-[state=active]:bg-[#2A7AFF] data-[state=active]:text-white cursor-pointer">Manutenção</TabsTrigger>
             </TabsList>
-            <TabsContent value="web" className="bg-[#111] p-6 rounded-xl border border-gray-800">
+            <TabsContent value="web" className="bg-[#0D0D0D] rounded-[2.5rem] border border-white/5  p-6 ">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
                 <div>
                   <h3 className="text-2xl font-bold mb-4">Web Design Profissional</h3>
@@ -677,8 +677,8 @@ export default function Home() {
                         priority
                       />
                     </div>
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0A]/60 to-transparent pointer-events-none" />
-                    <div className="absolute inset-0 border-2 border-white/5 group-hover:border-[#2A7AFF]/30 transition-all duration-300 rounded-xl" />
+                    {/* <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0A]/60 to-transparent pointer-events-none" />
+                    <div className="absolute inset-0 border-2 border-white/5 group-hover:border-[#2A7AFF]/30 transition-all duration-300 rounded-xl" /> */}
                   </div>
                 </div>
               </div>
@@ -837,8 +837,6 @@ export default function Home() {
         </section>
         </ScrollAnimation>
 
-       
-
         <ScrollAnimation
           animateIn="animate-slide-in-left"
           animateOut="animate-slide-out-right"
@@ -877,7 +875,6 @@ export default function Home() {
           </section>
         </ScrollAnimation>
 
-        
         <ScrollAnimation
           animateIn="animate-fade-in animate-duration-1000"
           animateOut="animate-fade-out animate-duration-500"
@@ -908,10 +905,10 @@ export default function Home() {
             <div>
               <div className="flex items-center gap-2 mb-4">
               <div className="relative group">
-              <div className="absolute -inset-1 bg-gradient-to-r from-[#2A7AFF] to-[#FF4D4D] rounded-full blur opacity-30 group-hover:opacity-50 transition-opacity duration-300" />
+              <div className="absolute -inset-1 bg-gradient-to-r rounded-full blur opacity-30 group-hover:opacity-50 transition-opacity duration-300" />
               <a href="/" className="relative block">
                 <img 
-                  src="/favicon.ico" // Altere para o caminho correto da sua logo
+                  src="/logo.png" // Altere para o caminho correto da sua logo
                   alt="Marketilize Logo"
                   className="w-12 h-12 rounded-full hover:scale-105 transition-transform"
                 />

@@ -57,18 +57,15 @@ export default function ScrollHeader() {
           {/* Logo */}
           <div className="flex items-center gap-3 group">
             <div className="relative group">
-              <div className="absolute -inset-1 bg-gradient-to-r from-[#2A7AFF] to-[#FF4D4D] rounded-full blur opacity-30 group-hover:opacity-50 transition-opacity duration-300" />
+              <div className="absolute -inset-1 bg-gradient-to-r  rounded-full blur opacity-30 group-hover:opacity-50 transition-opacity duration-300" />
               <a href="/" className="relative block">
                 <img 
-                  src="/favicon.ico" // Altere para o caminho correto da sua logo
+                  src="/logo.png" // Altere para o caminho correto da sua logo
                   alt="Marketilize Logo"
                   className="w-12 h-12 rounded-full hover:scale-105 transition-transform"
                 />
               </a>
             </div>
-            <span className="text-2xl font-bold bg-gradient-to-r from-[#2A7AFF] to-[#FF4D4D] bg-clip-text text-transparent">
-              Marketilize
-            </span>
           </div>
 
           {/* Desktop Navigation */}
