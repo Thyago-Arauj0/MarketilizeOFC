@@ -6,8 +6,8 @@ interface ScrollAnimationProps {
   children: ReactNode;
   threshold?: number;
   className?: string;
-  animateIn?: string;
-  animateOut?: string;
+  distance?: string;
+  duration?: string;
   rootMargin?: string;
 }
 
@@ -15,27 +15,18 @@ export const ScrollAnimation = ({
   children,
   threshold = 0.2,
   className = '',
-  animateIn = 'animate-fade-in-up',
-  animateOut = '',
+  distance = '20px',
+  duration = '0.6s',
   rootMargin = '0px'
 }: ScrollAnimationProps) => {
   const [isVisible, setIsVisible] = useState(false);
   const domRef = useRef<HTMLDivElement>(null);
-  const prevYRef = useRef(0);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
-        const currentY = entry.boundingClientRect.y;
-        const isScrollingUp = currentY > prevYRef.current;
-        prevYRef.current = currentY;
-
         if (entry.isIntersecting) {
           setIsVisible(true);
-        } else {
-          if (animateOut && isScrollingUp) {
-            setIsVisible(false);
-          }
         }
       },
       { threshold, rootMargin }
@@ -47,13 +38,18 @@ export const ScrollAnimation = ({
     return () => {
       if (currentElement) observer.unobserve(currentElement);
     };
-  }, [threshold, rootMargin, animateOut]);
+  }, [threshold, rootMargin]);
 
   return (
     <div
       ref={domRef}
-      className={`${className} ${isVisible ? animateIn : animateOut}`}
-      style={{ opacity: isVisible ? 1 : 0, transition: 'opacity 0.6s ease-out' }}
+      className={className}
+      style={{
+        opacity: isVisible ? 1 : 0,
+        transform: isVisible ? 'translateY(0)' : `translateY(${distance})`,
+        transition: `opacity ${duration} ease-out, transform ${duration} ease-out`,
+        willChange: 'opacity, transform'
+      }}
     >
       {children}
     </div>
