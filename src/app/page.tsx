@@ -26,6 +26,7 @@ import { Modal } from "@/components/ui/modal"
 import { ScrollAnimation } from "@/components/animations/ScrollAnimation";
 import { ContactForm } from "../services/ContactForm";
 import { faqItems } from "@/lib/ArrayFAQ";
+import { ParticleBackground } from "@/components/animations/ParticleBackground";
 
 const benefits = [
   {
@@ -122,10 +123,7 @@ export default function Home() {
 
       <ScrollHeader />
       <main>
-        <ScrollAnimation
-          animateIn="animate-fade-in animate-duration-1000"
-          animateOut="animate-fade-out animate-duration-500"
-        >
+        <ScrollAnimation>
           {/* Hero Section */}
           <section className="container mx-auto px-4 py-16 md:py-24 relative overflow-hidden">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -261,12 +259,7 @@ export default function Home() {
           </section>
         </ScrollAnimation>
         
-        <ScrollAnimation
-          animateIn="animate-slide-in-left"
-          animateOut="animate-slide-out-right"
-          threshold={0.1} // Aumenta a sensibilidade
-          rootMargin="-30px" // Margem menor para mobile
-          className="overflow-visible" // Garante que o conteúdo não seja cortado
+        <ScrollAnimation distance="30px" duration="0.8s" className="min-h-[200px] overflow-visible" // Garante que o conteúdo não seja cortado
         >
           {/* Benefits Section */}
           <section className="container mx-auto px-4 py-16 md:py-24">
@@ -300,32 +293,12 @@ export default function Home() {
           </section>
         </ScrollAnimation>
 
-        <ScrollAnimation
-          animateIn="animate-fade-in animate-duration-1000"
-          animateOut="animate-fade-out animate-duration-500"
-          threshold={0.1}
-        >
+        <ScrollAnimation distance="30px" duration="0.8s" className="min-h-[200px]">
           {/* How It Works Section */}
           <section id="how-it-works" className="container mx-auto px-4 py-20 md:py-32 bg-[#0D0D0D] rounded-[2.5rem] border border-white/5 relative overflow-hidden">
             
             {/* Efeito de partículas de fundo */}
-            <div className="absolute inset-0 overflow-hidden opacity-20">
-              {[...Array(12)].map((_, i) => (
-                <div 
-                  key={i}
-                  className="absolute rounded-full bg-gradient-to-r from-[#2A7AFF] to-[#FF4D4D]"
-                  style={{
-                    width: `${Math.random() * 6 + 2}px`,
-                    height: `${Math.random() * 6 + 2}px`,
-                    top: `${Math.random() * 100}%`,
-                    left: `${Math.random() * 100}%`,
-                    animation: `float ${Math.random() * 10 + 10}s linear infinite`,
-                    animationDelay: `${Math.random() * 5}s`
-                  }}
-                />
-              ))}
-            </div>
-
+            <ParticleBackground></ParticleBackground>
             <div className="text-center mb-20 space-y-6 relative z-10">
               <h2 className="text-4xl md:text-5xl font-bold mb-4 px-4 bg-gradient-to-r from-[#2A7AFF] via-[#FF4D4D] to-[#FF4D4D] bg-clip-text text-transparent">
                 Como Funciona?
@@ -430,13 +403,7 @@ export default function Home() {
         </ScrollAnimation>
 
         
-        <ScrollAnimation
-            animateIn="animate-slide-in-left"
-            animateOut="animate-slide-out-right"
-            threshold={0.5}
-            rootMargin="-50px"
-            className=""
-          >
+        <ScrollAnimation distance="30px" duration="0.8s" className="min-h-[200px]">
         {/* Lead Capture Section */}
         <section className="container mx-auto px-4 py-16 md:py-24">
           <div className="bg-gradient-to-r bg-[#0D0D0D] rounded-[2.5rem] border border-white/5 p-4 py-8  md:p-12">
@@ -608,10 +575,7 @@ export default function Home() {
           </div>
         </section> */}
 
-        <ScrollAnimation
-          animateIn="animate-fade-in animate-duration-1000"
-          animateOut="animate-fade-out animate-duration-500"
-        >
+        <ScrollAnimation distance="30px" duration="0.8s" className="min-h-[200px]">
         {/* Services Section */}
         <section id="services" className="container mx-auto px-4 py-16 md:py-24">
           <div className="text-center mb-16">
@@ -831,12 +795,7 @@ export default function Home() {
         </section>
         </ScrollAnimation>
 
-        <ScrollAnimation
-          animateIn="animate-slide-in-left"
-          animateOut="animate-slide-out-right"
-          threshold={0.5}
-          rootMargin="-50px"
-        >
+        <ScrollAnimation distance="30px" duration="0.8s" className="min-h-[200px]">
           {/* FAQ Section */}
           <section id="faq" className="container mx-auto px-4 py-16 md:py-28 lg:py-32">
             <div className="text-center mb-16 lg:mb-20">
@@ -869,10 +828,7 @@ export default function Home() {
           </section>
         </ScrollAnimation>
 
-        <ScrollAnimation
-          animateIn="animate-fade-in animate-duration-1000"
-          animateOut="animate-fade-out animate-duration-500"
-        >
+        <ScrollAnimation distance="30px" duration="0.8s" className="min-h-[200px]">
         {/* Final CTA Section */}
         <section className="py-16 md:py-24">
           <div className="container mx-auto px-4">
