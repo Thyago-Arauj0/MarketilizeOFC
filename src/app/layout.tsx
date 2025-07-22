@@ -1,10 +1,9 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import "./general.css"
+import "./general.css";
 import Script from "next/script";
-
-import { ThemeProvider } from "@/components/theme-provider"
+import { ThemeProvider } from "@/components/theme-provider";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -20,43 +19,43 @@ export const metadata: Metadata = {
   title: "Marketilize - Transforme Sua Ideia em uma Máquina de Vendas Online",
   description:
     "Desenvolvemos sites, e-commerces e estratégias de marketing que conquistam clientes e escalam seu negócio.",
-    keywords: [
-      "Desenvolvimento de sites",
-      "Site barato",
-      "Desenvolvimento de aplicativos",
-      "Desenvolvimento de landing pages",
-      "Landing page barata",
-      "App barato",
-      "Agência de marketing digital",
-      "Criação de sites profissionais",
-      "Desenvolvimento web sob medida",
-      "Empresa de tecnologia",
-      "Software sob demanda",
-      "Criação de aplicativos Android e iOS",
-      "Design responsivo",
-      "Marketing para empresas barato",
-      "Desenvolvimento fullstack",
-      "Landing pages que convertem",
-      "Criação de loja virtual barato",
-      "E-commerce barato",
-      "Criação de sites institucionais",
-      "Melhor software house do Brasil",
-      "Agência de desenvolvimento",
-      "Sites com SEO otimizado",
-      "Desenvolvimento com React e Django",
-      "Startup de tecnologia",
-      "Automação de processos com software",
-      "Soluções digitais para empresas",
-      "Marketilize",
-      "Marketing"
-    ]
-    ,
+  keywords: [
+    "Desenvolvimento de sites",
+    "Site barato",
+    "Desenvolvimento de aplicativos",
+    "Desenvolvimento de landing pages",
+    "Landing page barata",
+    "App barato",
+    "Agência de marketing digital",
+    "Criação de sites profissionais",
+    "Desenvolvimento web sob medida",
+    "Empresa de tecnologia",
+    "Software sob demanda",
+    "Criação de aplicativos Android e iOS",
+    "Design responsivo",
+    "Marketing para empresas barato",
+    "Desenvolvimento fullstack",
+    "Landing pages que convertem",
+    "Criação de loja virtual barato",
+    "E-commerce barato",
+    "Criação de sites institucionais",
+    "Melhor software house do Brasil",
+    "Agência de desenvolvimento",
+    "Sites com SEO otimizado",
+    "Desenvolvimento com React e Django",
+    "Startup de tecnologia",
+    "Automação de processos com software",
+    "Soluções digitais para empresas",
+    "Marketilize",
+    "Marketing"
+  ],
   authors: [{ name: "Marketilize", url: "https://marketilize.com.br" }],
   creator: "Marketilize",
   metadataBase: new URL("https://marketilize.com.br"),
   openGraph: {
     title: "Marketilize",
-    description: "Desenvolvemos sites, e-commerces e estratégias de marketing que conquistam clientes e escalam seu negócio.",
+    description:
+      "Desenvolvemos sites, e-commerces e estratégias de marketing que conquistam clientes e escalam seu negócio.",
     url: "https://marketilize.com.br",
     siteName: "Marketilize",
     images: [
@@ -80,36 +79,44 @@ export const metadata: Metadata = {
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode
+  children: React.ReactNode;
 }) {
   return (
     <html lang="pt-br" suppressHydrationWarning>
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+      <head>
         <Script
-          src="https://www.googletagmanager.com/gtag/js?id=G-D8WBE8GHHE"
-          strategy="afterInteractive"
-        />
-        <Script
-          id="gtag-init"
+          id="gtm-head"
           strategy="afterInteractive"
           dangerouslySetInnerHTML={{
             __html: `
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
-              gtag('config', 'G-D8WBE8GHHE');
+              (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+              new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+              j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+              'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+              })(window,document,'script','dataLayer','GTM-PPWCJJXR');
             `,
           }}
         />
-        <ThemeProvider 
-          attribute="class" 
-          defaultTheme="dark" 
-          enableSystem 
+      </head>
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+        <noscript>
+          <iframe
+            src="https://www.googletagmanager.com/ns.html?id=GTM-PPWCJJXR"
+            height="0"
+            width="0"
+            style={{ display: "none", visibility: "hidden" }}
+          ></iframe>
+        </noscript>
+
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="dark"
+          enableSystem
           disableTransitionOnChange
         >
           {children}
         </ThemeProvider>
       </body>
     </html>
-  )
+  );
 }

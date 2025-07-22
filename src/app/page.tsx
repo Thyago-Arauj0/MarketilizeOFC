@@ -28,6 +28,8 @@ import { ContactForm } from "../services/ContactForm";
 import { faqItems } from "@/lib/ArrayFAQ";
 import { ParticleBackground } from "@/components/animations/ParticleBackground";
 
+import { FaWhatsapp } from "react-icons/fa";
+
 const benefits = [
   {
     icon: <Code className="text-[#2A7AFF]" />,
@@ -108,14 +110,12 @@ export default function Home() {
               <div className="absolute -inset-1 bg-gradient-to-r rounded-full blur  group-hover:opacity-50 transition-opacity duration-300" />
               <a href="/" className="relative block">
                 <img 
-                  src="/marketilize.png" // Altere para o caminho correto da sua logo
+                  src="/marketilize.webp"
                   alt="Marketilize Logo"
                   className="w-36 h-auto hover:scale-105 transition-transform"
                 />
               </a>
             </div>
-
-            {/* Favicon (adicionar no head do documento) */}
             <link rel="icon" href="/favicon.ico" />
           </div>
         </nav>
@@ -124,11 +124,9 @@ export default function Home() {
       <ScrollHeader />
       <main>
         <ScrollAnimation>
-          {/* Hero Section */}
           <section className="container mx-auto px-4 py-16 md:py-24 relative overflow-hidden">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-              
-              {/* Coluna Esquerda - Texto e Botão */}
+            
               <div className="space-y-9 md:space-y-12">
                 <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.15] animate-fade-in-up [animation-delay:0.1s] opacity-0 max-w-4xl">
                   Transforme Sua Ideia em uma{' '}
@@ -145,7 +143,7 @@ export default function Home() {
                   </span> e escalam resultados.
                 </p>
                 
-                <Link target="_blank" href="https://wa.me/5575983252987?text=Ol%C3%A1,%20tenho%20interesse%20em%20criar%20um%20site%20com%20voc%C3%AAs">
+                <Link id="btnWppHero" target="_blank" href="https://wa.me/5575983252987?text=Ol%C3%A1,%20tenho%20interesse%20em%20criar%20um%20site%20com%20voc%C3%AAs">
                   <Button 
                     className="group bg-[#FF4D4D] hover:bg-[#FF4D4D] text-white px-10 py-7 text-xl rounded-xl transition-all 
                               hover:scale-105 hover:shadow-2xl hover:shadow-[#FF4D4D]/30 animate-pop-in [animation-delay:0.5s]
@@ -211,7 +209,7 @@ export default function Home() {
                           <div className="absolute inset-0 z-10 bg-gradient-to-t from-black/30 to-transparent pointer-events-none" />
                           
                           <Image
-                            src="/site1.png"
+                            src="/site1.webp"
                             width={400}
                             height={300}
                             alt="Mockup Website"
@@ -350,8 +348,7 @@ export default function Home() {
                     <div className="absolute inset-0 bg-[#0D0D0D] rounded-2xl"></div>
                     <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-[radial-gradient(200px_at_50%_50%,rgba(42,122,255,0.1),transparent)]"></div>
                   </div>
-                  
-                  {/* Ícone com gradiente */}
+
                   <div className="relative mb-5">
                     <div className="absolute -inset-2 bg-gradient-to-br from-[#2A7AFF] to-[#FF4D4D] rounded-full blur-md opacity-20 group-hover:opacity-40 transition-opacity"></div>
                     <div className={`w-12 h-12 rounded-xl flex items-center justify-center bg-gradient-to-br ${step.gradient} shadow-lg relative z-10`}>
@@ -359,7 +356,6 @@ export default function Home() {
                     </div>
                   </div>
               
-                  {/* Conteúdo do card */}
                   <div className="space-y-3 relative z-10">
                     <h3 className="text-xl font-semibold bg-gradient-to-r from-[#2A7AFF] via-[#FF4D4D] to-[#FF4D4D] bg-clip-text text-transparent">
                       {step.title}
@@ -369,7 +365,6 @@ export default function Home() {
                     </p>
                   </div>
               
-                  {/* Indicador de passo */}
                   <div className="mt-5 w-7 h-7 rounded-full bg-[#2A7AFF] flex items-center justify-center text-white text-sm font-medium border border-white/20 relative z-10">
                     {index + 1}
                   </div>
@@ -380,14 +375,13 @@ export default function Home() {
 
             <div className="text-center mt-20 relative z-10">
               <Button className="group relative overflow-hidden bg-gradient-to-br from-[#2A7AFF] via-[#3B82F6] to-[#1D4ED8] hover:bg-[length:400%_400%] text-white px-12 py-8 text-2xl rounded-xl transition-all duration-500 hover:scale-[1.03] hover:shadow-2xl hover:shadow-[#1D4ED8]/50 cursor-pointer">
-                {/* Efeitos visuais aprimorados */}
                 <div className="absolute inset-0 bg-[radial-gradient(300px_at_50%_150%,rgba(255,255,255,0.2),transparent)] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 
                 <div className="absolute inset-0 opacity-0 group-hover:opacity-40 transition-opacity duration-700">
                   <div className="absolute top-1/2 left-1/2 w-[300%] h-[300%] bg-[conic-gradient(from_90deg_at_50%_50%,#2A7AFF,#3B82F6,#1D4ED8,transparent)] animate-rotate-bg -translate-x-1/2 -translate-y-1/2" />
                 </div>
 
-                <Link href="https://wa.me/5575983252987?text=Olá, quero agendar uma reunião sobre desenvolvimento web" target="_blank">
+                <Link id="btnWppSchedule" href="https://wa.me/5575983252987?text=Olá, quero agendar uma reunião sobre desenvolvimento web" target="_blank">
                   <div className="relative z-20 flex items-center gap-4">
                     <span className="text-balance bg-gradient-to-r from-white via-[#BFDBFE] to-white bg-clip-text text-transparent font-bold tracking-wide drop-shadow-md">
                       Agendar conversa
@@ -427,48 +421,6 @@ export default function Home() {
                 </div>
               </div>
               <div className="bg-[#111] p-6 rounded-xl border border-gray-800">
-                {/* <form className="space-y-4">
-                  <div>
-                    <label htmlFor="name" className="block text-sm font-medium text-gray-400 mb-1">Nome</label>
-                    <Input id="name" placeholder="Seu nome completo" className="bg-[#0A0A0A] border-gray-800" />
-                  </div>
-                  <div>
-                    <label htmlFor="email" className="block text-sm font-medium text-gray-400 mb-1">E-mail</label>
-                    <Input id="email" type="email" placeholder="seu@email.com" className="bg-[#0A0A0A] border-gray-800" />
-                  </div>
-                  <div>
-                    <label htmlFor="phone" className="block text-sm font-medium text-gray-400 mb-1">Telefone</label>
-                    <Input id="phone" placeholder="(00) 00000-0000" className="bg-[#0A0A0A] border-gray-800" />
-                  </div>
-                  <div>
-                    <label htmlFor="business" className="block text-sm font-medium text-gray-400 mb-1">Tipo de Negócio</label>
-                    <Select>
-                      <SelectTrigger className="bg-[#0A0A0A] border-gray-800">
-                        <SelectValue placeholder="Selecione uma opção" />
-                      </SelectTrigger>
-                      <SelectContent className="bg-white">
-                        <SelectItem value="landing page">Landing Page</SelectItem>
-                        <SelectItem value="catalogo digital">Catálogo Digital</SelectItem>
-                        <SelectItem value="ecommerce">E-commerce</SelectItem>
-                        <SelectItem value="service">Empresa de Serviços</SelectItem>
-                        <SelectItem value="blog">Blog/Conteúdo</SelectItem>
-                        <SelectItem value="institutional">Site Institucional</SelectItem>
-                        <SelectItem value="other">Outro</SelectItem>
-                      </SelectContent>
-                    </Select>
-                  </div>
-                  <div>
-                    <label htmlFor="message" className="block text-sm font-medium text-gray-400 mb-1">Mensagem (opcional)</label>
-                    <Textarea id="message" placeholder="Conte-nos um pouco sobre seu projeto" className="bg-[#0A0A0A] border-gray-800" />
-                  </div>
-
-                  <Button className="w-full bg-[#FF4D4D] hover:bg-[#FF4D4D]/90 text-white py-6 cursor-pointer">
-                    Quero Minha Proposta Personalizada
-                  </Button>
-                  <p className="text-xs text-gray-500 text-center">
-                    Seus dados estão protegidos. Nada de spam!
-                  </p>
-                </form> */}
                 <ContactForm></ContactForm>
               </div>
             </div>
@@ -476,107 +428,8 @@ export default function Home() {
         </section>
         </ScrollAnimation>
 
-        {/* Testimonials Section */}
-        {/* <section id="testimonials" className="container mx-auto px-4 py-16 md:py-24">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Negócios que Decolaram com a Marketilize</h2>
-            <p className="text-gray-400 max-w-2xl mx-auto">
-              Veja o que nossos clientes têm a dizer sobre nossas soluções
-            </p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="bg-[#111] p-6 rounded-xl border border-gray-800">
-              <div className="flex items-center gap-4 mb-4">
-                <Image 
-                  src="/placeholder.svg?height=60&width=60" 
-                  width={60} 
-                  height={60} 
-                  alt="Cliente" 
-                  className="rounded-full"
-                />
-                <div>
-                  <h4 className="font-bold">Ana Silva</h4>
-                  <p className="text-sm text-gray-400">CEO, TechStore</p>
-                </div>
-              </div>
-              <p className="text-gray-300 mb-4">
-                "Nosso e-commerce cresceu 200% em 3 meses com o SEO deles! A equipe da Marketilize entendeu perfeitamente nossas necessidades e entregou além das expectativas."
-              </p>
-              <div className="flex text-[#FF4D4D]">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" strokeWidth="0" strokeLinecap="round" strokeLinejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" strokeWidth="0" strokeLinecap="round" strokeLinejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" strokeWidth="0" strokeLinecap="round" strokeLinejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" strokeWidth="0" strokeLinecap="round" strokeLinejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" strokeWidth="0" strokeLinecap="round" strokeLinejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-              </div>
-            </div>
-            <div className="bg-[#111] p-6 rounded-xl border border-gray-800">
-              <div className="flex items-center gap-4 mb-4">
-                <Image 
-                  src="/placeholder.svg?height=60&width=60" 
-                  width={60} 
-                  height={60} 
-                  alt="Cliente" 
-                  className="rounded-full"
-                />
-                <div>
-                  <h4 className="font-bold">Carlos Mendes</h4>
-                  <p className="text-sm text-gray-400">Fundador, Arquitetura Moderna</p>
-                </div>
-              </div>
-              <p className="text-gray-300 mb-4">
-                "O site que a Marketilize desenvolveu para nós não só é visualmente impressionante, mas também trouxe resultados concretos. Nossos agendamentos online aumentaram em 150%!"
-              </p>
-              <div className="flex text-[#FF4D4D]">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" strokeWidth="0" strokeLinecap="round" strokeLinejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" strokeWidth="0" strokeLinecap="round" strokeLinejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" strokeWidth="0" strokeLinecap="round" strokeLinejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" strokeWidth="0" strokeLinecap="round" strokeLinejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" strokeWidth="0" strokeLinecap="round" strokeLinejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-              </div>
-            </div>
-            <div className="bg-[#111] p-6 rounded-xl border border-gray-800">
-              <div className="flex items-center gap-4 mb-4">
-                <Image 
-                  src="/placeholder.svg?height=60&width=60" 
-                  width={60} 
-                  height={60} 
-                  alt="Cliente" 
-                  className="rounded-full"
-                />
-                <div>
-                  <h4 className="font-bold">Mariana Costa</h4>
-                  <p className="text-sm text-gray-400">Diretora de Marketing, FashionStore</p>
-                </div>
-              </div>
-              <p className="text-gray-300 mb-4">
-                "A estratégia de marketing digital implementada pela Marketilize transformou nossa presença online. Nosso ROI em anúncios aumentou 300% em apenas 2 meses!"
-              </p>
-              <div className="flex text-[#FF4D4D]">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" strokeWidth="0" strokeLinecap="round" strokeLinejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" strokeWidth="0" strokeLinecap="round" strokeLinejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" strokeWidth="0" strokeLinecap="round" strokeLinejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-                <svg 
-                  xmlns="http://www.w3.org/2000/svg" 
-                  width="20" 
-                  height="20" 
-                  viewBox="0 0 24 24" 
-                  fill="currentColor" 
-                  stroke="currentColor" 
-                  strokeWidth="0" 
-                  strokeLinecap="round" 
-                  strokeLinejoin="round"
-                >
-                  <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
-                </svg>
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" strokeWidth="0" strokeLinecap="round" strokeLinejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-              </div>
-            </div>
-          </div>
-        </section> */}
-
         <ScrollAnimation distance="30px" duration="0.8s" className="min-h-[200px]">
-        {/* Services Section */}
+
         <section id="services" className="container mx-auto px-4 py-16 md:py-24">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">Mais do que Sites: Soluções Completas</h2>
@@ -624,9 +477,9 @@ export default function Home() {
                 <div className="relative">
                   <div className="absolute -inset-0.5 bg-gradient-to-r from-[#2A7AFF] to-[#FF4D4D] rounded-lg blur opacity-30"></div>
                   <div className="relative bg-[#0A0A0A]/90 rounded-xl overflow-hidden group transition-all duration-300 hover:scale-[1.02]">
-                    <div className="relative pt-[66.66%]"> {/* Container de aspecto 3:2 (600x400) */}
+                    <div className="relative pt-[66.66%]">
                       <Image 
-                        src="/site3.png" 
+                        src="/site3.webp" 
                         fill
                         alt="Web Design" 
                         className="object-fit-cover p-4" 
@@ -635,8 +488,6 @@ export default function Home() {
                         priority
                       />
                     </div>
-                    {/* <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0A]/60 to-transparent pointer-events-none" />
-                    <div className="absolute inset-0 border-2 border-white/5 group-hover:border-[#2A7AFF]/30 transition-all duration-300 rounded-xl" /> */}
                   </div>
                 </div>
               </div>
@@ -676,7 +527,7 @@ export default function Home() {
                   <div className="relative bg-[#0A0A0A]/90 rounded-xl overflow-hidden group transition-all duration-300 hover:scale-[1.02]">
                     <div className="relative pt-[66.66%]"> {/* Container de aspecto 3:2 (600x400) */}
                       <Image 
-                        src="/seo.jpg" 
+                        src="/seo.webp" 
                         fill
                         alt="SEO" 
                         className="object-fit-cover p-4" 
@@ -726,7 +577,7 @@ export default function Home() {
                   <div className="relative bg-[#0A0A0A]/90 rounded-xl overflow-hidden group transition-all duration-300 hover:scale-[1.02]">
                     <div className="relative pt-[66.66%]"> {/* Container de aspecto 3:2 (600x400) */}
                       <Image 
-                        src="/marketing.jpg" 
+                        src="/marketing.webp" 
                         fill
                         alt="Marketing Digital" 
                         className="object-fit-cover p-4" 
@@ -776,7 +627,7 @@ export default function Home() {
                   <div className="relative bg-[#0A0A0A]/90 rounded-xl overflow-hidden group transition-all duration-300 hover:scale-[1.02]">
                     <div className="relative pt-[66.66%]"> {/* Container de aspecto 3:2 (600x400) */}
                       <Image 
-                        src="/manutencao.jpg" 
+                        src="/manutencao.webp" 
                         fill
                         alt="Manutenção" 
                         className="object-fit-cover p-4" 
@@ -796,7 +647,7 @@ export default function Home() {
         </ScrollAnimation>
 
         <ScrollAnimation distance="30px" duration="0.8s" className="min-h-[200px]">
-          {/* FAQ Section */}
+
           <section id="faq" className="container mx-auto px-4 py-16 md:py-28 lg:py-32">
             <div className="text-center mb-16 lg:mb-20">
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 lg:mb-6">
@@ -829,7 +680,7 @@ export default function Home() {
         </ScrollAnimation>
 
         <ScrollAnimation distance="30px" duration="0.8s" className="min-h-[200px]">
-        {/* Final CTA Section */}
+
         <section className="py-16 md:py-24">
           <div className="container mx-auto px-4">
             <div className="bg-gradient-to-r from-[#2A7AFF] to-[#FF4D4D] rounded-3xl p-8 md:p-12 text-center">
@@ -837,7 +688,7 @@ export default function Home() {
               <p className="text-white/90 max-w-2xl mx-auto mb-8 text-lg">
                 A Primeira Conversa é Grátis e Sem Compromisso!
               </p>
-              <Link target="_blank" href="https://wa.me/5575983252987?text=Ol%C3%A1,%20tenho%20interesse%20em%20criar%20um%20site%20com%20voc%C3%AAs">
+              <Link id="btnWppContact" target="_blank" href="https://wa.me/5575983252987?text=Ol%C3%A1,%20tenho%20interesse%20em%20criar%20um%20site%20com%20voc%C3%AAs">
                 <Button className="bg-white text-[#0A0A0A] hover:bg-white/90 px-8 py-6 text-lg rounded-lg cursor-pointer transition-all duration-500 hover:scale-105">
                   Falar conosco agora <ChevronRight className="ml-2 h-5 w-5" />
                 </Button>
@@ -848,7 +699,6 @@ export default function Home() {
         </ScrollAnimation>
       </main>
 
-      {/* Footer */}
       <footer className="bg-[#0D0D0D] py-12 md:py-16">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
@@ -858,7 +708,7 @@ export default function Home() {
               <div className="absolute -inset-1 bg-gradient-to-r rounded-full blur opacity-30 group-hover:opacity-50 transition-opacity duration-300" />
               <a href="/" className="relative block">
                 <img 
-                  src="/marketilize.png" // Altere para o caminho correto da sua logo
+                  src="/marketilize.webp"
                   alt="Marketilize Logo"
                   className="w-48 h-auto rounded-full hover:scale-105 transition-transform"
                 />
@@ -874,24 +724,6 @@ export default function Home() {
                 </a>
               </div>
             </div>
-            {/* <div>
-              <h4 className="font-bold mb-4">Serviços</h4>
-              <ul className="space-y-2">
-                <li><a href="#services" className="text-gray-400 hover:text-white transition-colors">Web Design</a></li>
-                <li><a href="#services" className="text-gray-400 hover:text-white transition-colors">E-commerce</a></li>
-                <li><a href="#services" className="text-gray-400 hover:text-white transition-colors">SEO</a></li>
-                <li><a href="#services" className="text-gray-400 hover:text-white transition-colors">Marketing Digital</a></li>
-                <li><a href="#services" className="text-gray-400 hover:text-white transition-colors">Manutenção</a></li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="font-bold mb-4">Empresa</h4>
-              <ul className="space-y-2">
-                <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Sobre Nós</a></li>
-                <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Portfólio</a></li>
-                <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Contato</a></li>
-              </ul>
-            </div> */}
             <div>
               <h4 className="font-bold mb-4">Contato</h4>
               <ul className="space-y-2">
@@ -926,11 +758,10 @@ export default function Home() {
         </div>
       </footer>
 
-      {/* Chat Button */}
       <div className="fixed bottom-6 right-6 z-50">
-        <Link target="_blank" href="https://wa.me/5575983252987?text=Ol%C3%A1,%20tenho%20interesse%20em%20criar%20um%20site%20com%20voc%C3%AAs">
-          <Button className="w-14 h-14 rounded-full bg-gradient-to-r from-[#2A7AFF] to-[#FF4D4D] p-0 shadow-lg cursor-pointer hover:scale-105">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-white"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+        <Link id="btnWppFixed" target="_blank" href="https://wa.me/5575983252987?text=Ol%C3%A1,%20tenho%20interesse%20em%20criar%20um%20site%20com%20voc%C3%AAs">
+          <Button className="w-12 h-12 rounded-full bg-gradient-to-r from-[#2A7AFF] to-[#FF4D4D] p-0 shadow-lg cursor-pointer hover:scale-105">
+          <FaWhatsapp className="text-6xl" />
           </Button>
         </Link>
       </div>
@@ -976,7 +807,7 @@ export default function Home() {
               <div className="absolute inset-0 rounded-xl bg-white/10 opacity-0 group-hover:opacity-20 transition-opacity duration-300" />
               
               {/* Texto com pequeno movimento no hover */}
-              <Link target="_blank" href="https://wa.me/5575983252987?text=Ol%C3%A1,%20tenho%20interesse%20em%20criar%20um%20site%20com%20voc%C3%AAs">
+              <Link id="btnWppModal" target="_blank" href="https://wa.me/5575983252987?text=Ol%C3%A1,%20tenho%20interesse%20em%20criar%20um%20site%20com%20voc%C3%AAs">
                 <span className="relative flex items-center gap-2">
                     Comece agora
                     <svg 

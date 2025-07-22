@@ -2,24 +2,16 @@
 
 import { useEffect, useState } from 'react';
 import {
-  ChevronRight,
-  Code,
-  BarChart,
-  Shield,
-  Zap,
-  MessageSquare,
-  FileCheck,
-  Rocket,
-  CheckCircle,
   Briefcase,
   Settings,
-  Star,
   HelpCircle,
   Mail,
   Menu,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Link from 'next/link';
+
+import { FaWhatsapp } from 'react-icons/fa';
 
 export default function ScrollHeader() {
   const [isVisible, setIsVisible] = useState(false);
@@ -54,27 +46,23 @@ export default function ScrollHeader() {
     `}>
       <div className="container mx-auto py-6 px-4 md:px-6 lg:px-8">
         <div className="flex justify-between items-center bg-[#0F0F0F]/95 backdrop-blur-lg rounded-2xl p-4 border border-[#1F1F1F] shadow-xl transition-transform duration-300 hover:scale-[1.005]">
-          {/* Logo */}
           <div className="flex items-center gap-3 group">
             <div className="relative group">
               <div className="absolute -inset-1 bg-gradient-to-r  rounded-full blur opacity-30 group-hover:opacity-50 transition-opacity duration-300" />
               <a href="/" className="relative block">
                 <img 
-                  src="/logo2.png" // Altere para o caminho correto da sua logo
+                  src="/logo2.webp"
                   alt="Marketilize Logo"
                   className="w-12 h-12 rounded-full hover:scale-105 transition-transform"
                 />
               </a>
             </div>
           </div>
-
-          {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center gap-4">
             <div className="bg-[#111] rounded-xl p-1 flex items-center border border-[#222] shadow-inner">
               {[
                 { href: "#services", icon: Briefcase, text: "Serviços" },
                 { href: "#how-it-works", icon: Settings, text: "Como Funciona" },
-                // { href: "#testimonials", icon: Star, text: "Depoimentos" },
                 { href: "#faq", icon: HelpCircle, text: "FAQ" },
               ].map((item, index) => (
                 <Link
@@ -90,18 +78,16 @@ export default function ScrollHeader() {
               ))}
             </div>
 
-            <a href="mailto:suporteconstsoft@gmail.com">
+            <a id='btnWppNavbar' href="https://wa.me/5575983252987?text=Ol%C3%A1,%20tenho%20interesse%20em%20criar%20um%20site%20com%20voc%C3%AAs">
               <Button 
                 className="ml-2 bg-gradient-to-r from-[#FF4D4D] to-[#FF6B6B] hover:from-[#FF6B6B] hover:to-[#FF4D4D] shadow-lg hover:shadow-[#FF4D4D]/30 transition-all cursor-pointer"
                 size="lg"
               >
-                <Mail className="h-5 w-5 mr-2" />
-                <span className="font-semibold">Contato</span>
+                <FaWhatsapp className="h-5 w-5 mr-2" />
+                <span className="font-semibold">Orçamento</span>
               </Button>
             </a>
           </nav>
-
-          {/* Mobile Menu */}
           <div className="md:hidden relative">
             <Button 
               variant="ghost" 
@@ -120,7 +106,6 @@ export default function ScrollHeader() {
                   {[
                     { href: "#services", icon: Briefcase, text: "Serviços" },
                     { href: "#how-it-works", icon: Settings, text: "Como Funciona" },
-                    // { href: "#testimonials", icon: Star, text: "Depoimentos" },
                     { href: "#faq", icon: HelpCircle, text: "FAQ" },
                   ].map((item, index) => (
                     <Link
@@ -138,13 +123,13 @@ export default function ScrollHeader() {
                 </div>
                 
                 <div className="border-t border-[#1F1F1F] p-2">
-                  <a href="mailto:suporteconstsoft@gmail.com">
+                  <a id='btnWppNavbar' href="https://wa.me/5575983252987?text=Ol%C3%A1,%20tenho%20interesse%20em%20criar%20um%20site%20com%20voc%C3%AAs">
                     <Button 
                       className="w-full bg-gradient-to-r from-[#FF4D4D] to-[#FF6B6B] hover:from-[#FF6B6B] hover:to-[#FF4D4D]"
                       size="sm"
                     >
-                      <Mail className="h-4 w-4 mr-2" />
-                      Contato
+                      <FaWhatsapp className="h-4 w-4 mr-2" />
+                      Orçamento
                     </Button>
                   </a>
                 </div>

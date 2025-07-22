@@ -81,7 +81,7 @@ export function ContactForm() {
   };
 
   return (
-    <form className="space-y-4" onSubmit={handleSubmit}>
+    <form id="contactForm" className="space-y-4" onSubmit={handleSubmit}>
         <div>
         <label htmlFor="name" className="block text-sm font-medium text-gray-400 mb-1">
           Nome
@@ -164,7 +164,7 @@ export function ContactForm() {
         disabled={loading}
         className="w-full bg-[#FF4D4D] hover:bg-[#FF4D4D]/90 text-white py-6 cursor-pointer disabled:opacity-50"
       >
-        {loading ? 'Enviando...' : 'Quero Minha Proposta Personalizada'}
+        {loading ? 'Enviando...' : 'Quero Minha Proposta'}
       </Button>
 
       {success && (
