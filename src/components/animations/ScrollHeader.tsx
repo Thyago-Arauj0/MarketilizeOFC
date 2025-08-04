@@ -4,8 +4,9 @@ import { useEffect, useState } from 'react';
 import {
   Briefcase,
   Settings,
+  ClipboardPaste,
   HelpCircle,
-  Mail,
+  FolderKanban,
   Menu,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -61,13 +62,16 @@ export default function ScrollHeader() {
           <nav className="hidden md:flex items-center gap-4">
             <div className="bg-[#111] rounded-xl p-1 flex items-center border border-[#222] shadow-inner">
               {[
-                { href: "#services", icon: Briefcase, text: "Serviços" },
-                { href: "#how-it-works", icon: Settings, text: "Como Funciona" },
-                { href: "#faq", icon: HelpCircle, text: "FAQ" },
+                { href: "/projects", icon: FolderKanban, text: "Projetos", target: '_self' },
+                { href: "/#services", icon: Briefcase, text: "Serviços", target: '_self' },
+                { href: "/#how-it-works", icon: Settings, text: "Como Funciona", target: '_self' },
+                { href: "https://wa.me/5575983252987?text=Ol%C3%A1,%20tenho%20interesse%20em%20criar%20um%20site%20com%20voc%C3%AAs", icon: FaWhatsapp, text: "Contato", target: '_blank'},
+                { href: "/#faq", icon: HelpCircle, text: "FAQ", target: '_self' },
               ].map((item, index) => (
                 <Link
                   key={index}
                   href={item.href}
+                  target={item.target}
                   className="flex items-center gap-2 px-5 py-2.5 rounded-lg hover:bg-[#1A1A1A] transition-all group cursor-pointer"
                 >
                   <item.icon className="h-5 w-5 text-[#2A7AFF] group-hover:text-[#FF4D4D] transition-colors" />
@@ -78,15 +82,15 @@ export default function ScrollHeader() {
               ))}
             </div>
 
-            <a id='btnWppNavbar' href="https://wa.me/5575983252987?text=Ol%C3%A1,%20tenho%20interesse%20em%20criar%20um%20site%20com%20voc%C3%AAs">
+            <Link id='btnWppNavbar' target='_blank' href="https://form.typeform.com/to/rEnDcO6y">
               <Button 
                 className="ml-2 bg-gradient-to-r from-[#FF4D4D] to-[#FF6B6B] hover:from-[#FF6B6B] hover:to-[#FF4D4D] shadow-lg hover:shadow-[#FF4D4D]/30 transition-all cursor-pointer"
                 size="lg"
               >
-                <FaWhatsapp className="h-5 w-5 mr-2" />
+                <ClipboardPaste className="h-5 w-5 mr-2" />
                 <span className="font-semibold">Orçamento</span>
               </Button>
-            </a>
+            </Link>
           </nav>
           <div className="md:hidden relative">
             <Button 
@@ -104,13 +108,16 @@ export default function ScrollHeader() {
               <div className="bg-[#0F0F0F] border border-[#1F1F1F] rounded-2xl shadow-xl overflow-hidden">
                 <div className="p-2 space-y-1">
                   {[
-                    { href: "#services", icon: Briefcase, text: "Serviços" },
-                    { href: "#how-it-works", icon: Settings, text: "Como Funciona" },
-                    { href: "#faq", icon: HelpCircle, text: "FAQ" },
+                    { href: "/projects", icon: FolderKanban, text: "Projetos", target: '_self' },
+                    { href: "/#services", icon: Briefcase, text: "Serviços", target: '_self' },
+                    { href: "/#how-it-works", icon: Settings, text: "Como Funciona", target: '_self' },
+                    { href: "https://wa.me/5575983252987?text=Ol%C3%A1,%20tenho%20interesse%20em%20criar%20um%20site%20com%20voc%C3%AAs", icon: FaWhatsapp, text: "Contato", target: '_blank'},
+                    { href: "/#faq", icon: HelpCircle, text: "FAQ", target: '_self' },
                   ].map((item, index) => (
                     <Link
                       key={index}
                       href={item.href}
+                      target={item.target}
                       className="flex items-center gap-3 px-4 py-3 rounded-lg hover:bg-[#1A1A1A] transition-colors group"
                       onClick={() => setIsMenuOpen(false)}
                     >
@@ -123,15 +130,15 @@ export default function ScrollHeader() {
                 </div>
                 
                 <div className="border-t border-[#1F1F1F] p-2">
-                  <a id='btnWppNavbar' href="https://wa.me/5575983252987?text=Ol%C3%A1,%20tenho%20interesse%20em%20criar%20um%20site%20com%20voc%C3%AAs">
+                  <Link id='btnWppNavbar' target='_blank' href="https://form.typeform.com/to/rEnDcO6y">
                     <Button 
                       className="w-full bg-gradient-to-r from-[#FF4D4D] to-[#FF6B6B] hover:from-[#FF6B6B] hover:to-[#FF4D4D]"
                       size="sm"
                     >
-                      <FaWhatsapp className="h-4 w-4 mr-2" />
+                      <ClipboardPaste className="h-4 w-4 mr-2" />
                       Orçamento
                     </Button>
-                  </a>
+                  </Link>
                 </div>
                 
               </div>

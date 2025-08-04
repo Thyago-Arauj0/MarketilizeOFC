@@ -91,7 +91,7 @@ export function ContactForm() {
           value={formData.name}
           onChange={handleInputChange}
           placeholder="Seu nome completo"
-          className="bg-[#0A0A0A] border-gray-800"
+          className="bg-[#0A0A0A] border-gray-800 py-5"
           required
         />
       </div>
@@ -106,7 +106,7 @@ export function ContactForm() {
           value={formData.email}
           onChange={handleInputChange}
           placeholder="seu@email.com"
-          className="bg-[#0A0A0A] border-gray-800"
+          className="bg-[#0A0A0A] border-gray-800 py-5"
           required
         />
       </div>
@@ -120,7 +120,7 @@ export function ContactForm() {
           value={formData.phone}
           onChange={handleInputChange}
           placeholder="(00) 00000-0000"
-          className="bg-[#0A0A0A] border-gray-800"
+          className="bg-[#0A0A0A] border-gray-800 py-5"
           required
         />
       </div>
@@ -130,17 +130,17 @@ export function ContactForm() {
           Tipo de Negócio
         </label>
         <Select value={formData.business} onValueChange={handleSelectChange}>
-          <SelectTrigger className="bg-[#0A0A0A] border-gray-800">
+          <SelectTrigger className="bg-[#0A0A0A] border-gray-800 py-5 cursor-pointer w-full">
             <SelectValue placeholder="Selecione uma opção" />
           </SelectTrigger>
-          <SelectContent className="bg-white">
-            <SelectItem value="landing page">Landing Page</SelectItem>
-            <SelectItem value="catalogo digital">Catálogo Digital</SelectItem>
-            <SelectItem value="ecommerce">E-commerce</SelectItem>
-            <SelectItem value="service">Empresa de Serviços</SelectItem>
-            <SelectItem value="blog">Blog/Conteúdo</SelectItem>
-            <SelectItem value="institutional">Site Institucional</SelectItem>
-            <SelectItem value="other">Outro</SelectItem>
+          <SelectContent className="bg-[#0A0A0A] text-white">
+            <SelectItem value="landing page" className='cursor-pointer'>Landing Page</SelectItem>
+            <SelectItem value="catalogo digital" className='cursor-pointer'>Catálogo Digital</SelectItem>
+            <SelectItem value="ecommerce" className='cursor-pointer'>E-commerce</SelectItem>
+            <SelectItem value="service" className='cursor-pointer'>Empresa de Serviços</SelectItem>
+            <SelectItem value="blog" className='cursor-pointer'>Blog/Conteúdo</SelectItem>
+            <SelectItem value="institutional" className='cursor-pointer'>Site Institucional</SelectItem>
+            <SelectItem value="other" className='cursor-pointer'>Outro</SelectItem>
           </SelectContent>
         </Select>
       </div>
@@ -154,7 +154,7 @@ export function ContactForm() {
           value={formData.message}
           onChange={handleInputChange}
           placeholder="Conte-nos um pouco sobre seu projeto"
-          className="bg-[#0A0A0A] border-gray-800"
+          className="bg-[#0A0A0A] border-gray-800 py-5 min-h-[100px]"
         />
       </div>
 

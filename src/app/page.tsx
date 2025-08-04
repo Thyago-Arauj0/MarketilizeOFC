@@ -10,14 +10,13 @@ import {
   Shield,
   Zap,
   MessageSquare,
+  TrendingUp,
   FileCheck,
   Rocket,
   CheckCircle,
+  MessageCircle
 } from "lucide-react"
 import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Textarea } from "@/components/ui/textarea"
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import ScrollHeader from "@/components/animations/ScrollHeader";
@@ -29,6 +28,7 @@ import { faqItems } from "@/lib/ArrayFAQ";
 import { ParticleBackground } from "@/components/animations/ParticleBackground";
 
 import { FaWhatsapp } from "react-icons/fa";
+import WhatsAppButton from "@/components/whatsapp-button";
 
 const benefits = [
   {
@@ -100,28 +100,7 @@ export default function Home() {
 
 
   return (
-    <div className="min-h-screen bg-[#0A0A0A] text-white">
-      {/* Header */}
-      <header className="bg-gradient-to-b from-white/5 to-transparent border-b border-[#2A7AFF]/10">
-        <nav className="container mx-auto px-4 py-5 md:py-6">
-          <div className="flex items-center gap-3 hover:gap-4 transition-all duration-300">
-            {/* Logo */}
-            <div className="relative group">
-              <div className="absolute -inset-1 bg-gradient-to-r rounded-full blur  group-hover:opacity-50 transition-opacity duration-300" />
-              <a href="/" className="relative block">
-                <img 
-                  src="/marketilize.webp"
-                  alt="Marketilize Logo"
-                  className="w-36 h-auto hover:scale-105 transition-transform"
-                />
-              </a>
-            </div>
-            <link rel="icon" href="/favicon.ico" />
-          </div>
-        </nav>
-      </header>
-
-      <ScrollHeader />
+    <>
       <main>
         <ScrollAnimation>
           <section className="container mx-auto px-4 py-16 md:py-24 relative overflow-hidden">
@@ -143,13 +122,11 @@ export default function Home() {
                   </span> e escalam resultados.
                 </p>
                 
-                <Link id="btnWppHero" target="_blank" href="https://wa.me/5575983252987?text=Ol%C3%A1,%20tenho%20interesse%20em%20criar%20um%20site%20com%20voc%C3%AAs">
+                <Link id="btnWppHero" target="_blank" href="https://form.typeform.com/to/rEnDcO6y">
                   <Button 
-                    className="group bg-[#FF4D4D] hover:bg-[#FF4D4D] text-white px-10 py-7 text-xl rounded-xl transition-all 
-                              hover:scale-105 hover:shadow-2xl hover:shadow-[#FF4D4D]/30 animate-pop-in [animation-delay:0.5s]
-                              focus:ring-4 focus:ring-[#FF4D4D]/50 cursor-pointer"
+                    className="bg-gradient-to-r from-[#FF4D4D] to-[#FF6B6B] hover:from-[#FF6B6B] hover:to-[#FF4D4D] font-bold p-8 cursor-pointer hover:scale-105 transition-all duration-500"
                   >
-                    <span className="flex items-center gap-3">
+                    <span className="flex items-center gap-3 text-xl">
                       Quero um site que vende 
                       <ChevronRight className="h-6 w-6 transition-transform group-hover:translate-x-1" />
                     </span>
@@ -374,23 +351,16 @@ export default function Home() {
             </div>
 
             <div className="text-center mt-20 relative z-10">
-              <Button className="group relative overflow-hidden bg-gradient-to-br from-[#2A7AFF] via-[#3B82F6] to-[#1D4ED8] hover:bg-[length:400%_400%] text-white px-12 py-8 text-2xl rounded-xl transition-all duration-500 hover:scale-[1.03] hover:shadow-2xl hover:shadow-[#1D4ED8]/50 cursor-pointer">
-                <div className="absolute inset-0 bg-[radial-gradient(300px_at_50%_150%,rgba(255,255,255,0.2),transparent)] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                
-                <div className="absolute inset-0 opacity-0 group-hover:opacity-40 transition-opacity duration-700">
-                  <div className="absolute top-1/2 left-1/2 w-[300%] h-[300%] bg-[conic-gradient(from_90deg_at_50%_50%,#2A7AFF,#3B82F6,#1D4ED8,transparent)] animate-rotate-bg -translate-x-1/2 -translate-y-1/2" />
-                </div>
-
-                <Link id="btnWppSchedule" href="https://wa.me/5575983252987?text=Olá, quero agendar uma reunião sobre desenvolvimento web" target="_blank">
+              <Button className="bg-gradient-to-r from-[#FF4D4D] to-[#FF6B6B] hover:from-[#FF6B6B] hover:to-[#FF4D4D] font-bold text-xl p-7 cursor-pointer hover:scale-105 transition-all duration-500">
+                <Link id="btnWppSchedule" href="https://form.typeform.com/to/rEnDcO6y" target="_blank">
                   <div className="relative z-20 flex items-center gap-4">
-                    <span className="text-balance bg-gradient-to-r from-white via-[#BFDBFE] to-white bg-clip-text text-transparent font-bold tracking-wide drop-shadow-md">
-                      Agendar conversa
+                    <TrendingUp/>
+                    <span className=" bg-gradient-to-r  from-white via-[#BFDBFE] to-white bg-clip-text text-transparent tracking-wide drop-shadow-md">
+                       COMEÇAR
                     </span>
                     <ChevronRight className="h-8 w-8 text-[#BFDBFE] transition-transform group-hover:translate-x-3 group-hover:scale-110 duration-300 ease-[cubic-bezier(0.68,-0.55,0.27,1.55)]" />
                   </div>
                 </Link>
-
-                <div className="absolute inset-0 rounded-xl border-2 border-[#2A7AFF]/30 group-hover:border-[#BFDBFE]/50 transition-all duration-500" />
               </Button>
             </div>
           </section>
@@ -420,8 +390,10 @@ export default function Home() {
                   <span className="text-gray-300">Consultoria inicial gratuita</span>
                 </div>
               </div>
-              <div className="bg-[#111] p-6 rounded-xl border border-gray-800">
-                <ContactForm></ContactForm>
+              <div className="flex justify-end">
+                <div className="bg-[#111] w-full max-w-[500px] p-6 rounded-xl border border-gray-800 ">
+                  <ContactForm></ContactForm>
+                </div>
               </div>
             </div>
           </div>
@@ -439,12 +411,13 @@ export default function Home() {
           </div>
           <Tabs defaultValue="web" className="w-full">
             <TabsList className="grid w-full grid-cols-2 md:grid-cols-4 mb-8">
-              <TabsTrigger value="web" className="data-[state=active]:bg-[#2A7AFF] data-[state=active]:text-white cursor-pointer">Web Design</TabsTrigger>
-              <TabsTrigger value="seo" className="data-[state=active]:bg-[#2A7AFF] data-[state=active]:text-white cursor-pointer">SEO & Tráfego</TabsTrigger>
-              <TabsTrigger value="marketing" className="data-[state=active]:bg-[#2A7AFF] data-[state=active]:text-white cursor-pointer">Marketing Digital</TabsTrigger>
-              <TabsTrigger value="support" className="data-[state=active]:bg-[#2A7AFF] data-[state=active]:text-white cursor-pointer">Manutenção</TabsTrigger>
+              <TabsTrigger value="web" className="data-[state=active]:bg-[#FF4D4D] hover:data-[state=active]:bg-[#FF4D4D]/90 py-3 data-[state=active]:text-white cursor-pointer">Web Design</TabsTrigger>
+              <TabsTrigger value="seo" className="data-[state=active]:bg-[#2A7AFF] data-[state=active]:text-white py-3 cursor-pointer">SEO & Tráfego</TabsTrigger>
+              <TabsTrigger value="marketing" className="data-[state=active]:bg-[#FF4D4D] hover:data-[state=active]:bg-[#FF4D4D]/90 py-3 data-[state=active]:text-white cursor-pointer">Marketing Digital</TabsTrigger>
+              <TabsTrigger value="support" className="data-[state=active]:bg-[#2A7AFF] data-[state=active]:text-white py-3 cursor-pointer">Manutenção</TabsTrigger>
             </TabsList>
-            <TabsContent value="web" className="bg-[#0D0D0D] rounded-[2.5rem] border border-white/5  p-6 ">
+            <br />
+            <TabsContent value="web" className="bg-[#0D0D0D] rounded-[2.5rem] border border-white/5 p-6">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
                 <div>
                   <h3 className="text-2xl font-bold mb-4">Web Design Profissional</h3>
@@ -683,14 +656,14 @@ export default function Home() {
 
         <section className="py-16 md:py-24">
           <div className="container mx-auto px-4">
-            <div className="bg-gradient-to-r from-[#2A7AFF] to-[#FF4D4D] rounded-3xl p-8 md:p-12 text-center">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">Pronto para Dominar o Digital?</h2>
-              <p className="text-white/90 max-w-2xl mx-auto mb-8 text-lg">
+            <div className=" bg-[#111] border border-gray-800 rounded-3xl p-8 md:p-12 md:text-center max-w-[600px] mx-auto">
+              <h2 className="text-3xl md:text-4xl font-extrabold mb-4 text-white ">Pronto para Dominar o Digital?</h2>
+              <p className="text-white/90 max-w-2xl mx-auto mb-8 text-lg ">
                 A Primeira Conversa é Grátis e Sem Compromisso!
               </p>
               <Link id="btnWppContact" target="_blank" href="https://wa.me/5575983252987?text=Ol%C3%A1,%20tenho%20interesse%20em%20criar%20um%20site%20com%20voc%C3%AAs">
-                <Button className="bg-white text-[#0A0A0A] hover:bg-white/90 px-8 py-6 text-lg rounded-lg cursor-pointer transition-all duration-500 hover:scale-105">
-                  Falar conosco agora <ChevronRight className="ml-2 h-5 w-5" />
+                <Button className="bg-gradient-to-r from-[#FF4D4D] to-[#FF6B6B] hover:from-[#FF6B6B] hover:to-[#FF4D4D] font-bold text-white px-8 py-6 text-lg rounded-lg cursor-pointer transition-all duration-500 hover:scale-105 w-full md:w-auto">
+                  <MessageCircle/>SIM <ChevronRight className="ml-2 h-5 w-5" />
                 </Button>
               </Link>
             </div>
@@ -698,74 +671,6 @@ export default function Home() {
         </section>
         </ScrollAnimation>
       </main>
-
-      <footer className="bg-[#0D0D0D] py-12 md:py-16">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-            <div>
-              <div className="flex items-center gap-2 mb-4">
-              <div className="relative group">
-              <div className="absolute -inset-1 bg-gradient-to-r rounded-full blur opacity-30 group-hover:opacity-50 transition-opacity duration-300" />
-              <a href="/" className="relative block">
-                <img 
-                  src="/marketilize.webp"
-                  alt="Marketilize Logo"
-                  className="w-48 h-auto rounded-full hover:scale-105 transition-transform"
-                />
-              </a>
-            </div>
-              </div>
-              <p className="text-gray-400 mb-4">
-                Transformando ideias em resultados digitais desde 2024.
-              </p>
-              <div className="flex gap-4">
-                <a href="https://www.instagram.com/marketilize/" target="_blank" className="text-gray-400 hover:text-white transition-colors">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
-                </a>
-              </div>
-            </div>
-            <div>
-              <h4 className="font-bold mb-4">Contato</h4>
-              <ul className="space-y-2">
-                <li>
-                  <a href="mailto:suporteconstsoft@gmail.com" className="text-gray-400 hover:underline">
-                    suporteconstsoft@gmail.com
-                  </a>
-                </li>
-                <li>
-                  <a href="tel:+5575983252987" className="text-gray-400 hover:underline">
-                    (75) 9 8325-2987
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="https://www.google.com/maps/place/Feira+de+Santana,+BA"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-gray-400 hover:underline"
-                  >
-                    Feira de Santana, BA
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </div>
-          <div className="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
-            <p className="text-gray-500 text-sm mb-4 md:mb-0">
-              &copy; {new Date().getFullYear()} Marketilize. Todos os direitos reservados.
-            </p>
-          </div>
-        </div>
-      </footer>
-
-      <div className="fixed bottom-6 right-6 z-50">
-        <Link id="btnWppFixed" target="_blank" href="https://wa.me/5575983252987?text=Ol%C3%A1,%20tenho%20interesse%20em%20criar%20um%20site%20com%20voc%C3%AAs">
-          <Button className="w-12 h-12 rounded-full bg-gradient-to-r from-[#2A7AFF] to-[#FF4D4D] p-0 shadow-lg cursor-pointer hover:scale-105">
-          <FaWhatsapp className="text-6xl" />
-          </Button>
-        </Link>
-      </div>
-
       <Modal isOpen={showModal} onClose={handleCloseModal}>
         <div className="max-w-[700px] w-full">
           <DisplayedText
@@ -824,6 +729,6 @@ export default function Home() {
           )}
         </div>
       </Modal>
-    </div>
+    </>
   )
 }
