@@ -111,7 +111,7 @@ export default function RootLayout({
         </noscript>
 
               {/* Header */}
-              <header className="bg-gradient-to-b from-white/5 to-transparent border-b border-[#2A7AFF]/10">
+              <header className="bg-gradient-to-b from-[#0D0D0D] to-transparent border-b border-[#FF4D4D]">
                 <nav className="container mx-auto px-4 py-5 md:py-6">
                   <div className="flex items-center gap-3 hover:gap-4 transition-all duration-300">
                     {/* Logo */}
@@ -141,7 +141,7 @@ export default function RootLayout({
           {children}
         </ThemeProvider>
 
-      <footer className="bg-[#0D0D0D] py-12 md:py-16">
+      <footer className="bg-[#0D0D0D] py-12 md:py-24">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             <div>

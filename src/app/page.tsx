@@ -14,21 +14,20 @@ import {
   FileCheck,
   Rocket,
   CheckCircle,
-  MessageCircle
+  MessageCircle, Search, Megaphone, Settings, Palette
 } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import ScrollHeader from "@/components/animations/ScrollHeader";
 import DisplayedText from "@/components/animations/DisplayedText"
 import { Modal } from "@/components/ui/modal"
 import { ScrollAnimation } from "@/components/animations/ScrollAnimation";
 import { ContactForm } from "../services/ContactForm";
 import { faqItems } from "@/lib/ArrayFAQ";
+import { Card, CardContent } from "@/components/ui/card"
 import { ParticleBackground } from "@/components/animations/ParticleBackground";
+import HowItWorksSection from "./sections/how-it-works-section";
 
-import { FaWhatsapp } from "react-icons/fa";
-import WhatsAppButton from "@/components/whatsapp-button";
 
 const benefits = [
   {
@@ -63,6 +62,90 @@ const benefits = [
     description: "Estratégias completas para atrair e converter seu público-alvo."
   }
 ];
+
+
+ const services = [
+    {
+      id: "web",
+      title: "Desenvolvimento Web",
+      icon: Code,
+      color: "from-[#FF4D4D] to-[#FF6B6B]",
+      description: "Sites e e-commerces de alta performance",
+      features: [
+        "Landing Pages de alta conversão",
+        "E-commerces completos e otimizados",
+        "Sites institucionais modernos",
+        "Design responsivo para todos os dispositivos",
+        "Experiência do usuário (UX) otimizada",
+        "Integração com sistemas externos",
+      ],
+      link: "https://en.wikipedia.org/wiki/Web_development"
+    },
+    {
+      id: "seo",
+      title: "SEO & Tráfego",
+      icon: Search,
+      color: "from-[#2A7AFF] to-[#4F94FF]",
+      description: "Posicionamento orgânico no Google",
+      features: [
+        "Otimização on-page e off-page",
+        "Pesquisa de palavras-chave estratégicas",
+        "Criação de conteúdo otimizado para SEO",
+        "Análise de concorrentes e benchmarking",
+        "Relatórios mensais de desempenho",
+        "Link building e autoridade de domínio",
+      ],
+      link: "https://pt.wikipedia.org/wiki/Otimiza%C3%A7%C3%A3o_para_motores_de_busca"
+    },
+    {
+      id: "marketing",
+      title: "Marketing Digital",
+      icon: Megaphone,
+      color: "from-[#FF4D4D] to-[#FF6B6B]",
+      description: "Estratégias que geram resultados",
+      features: [
+        "Gestão de redes sociais",
+        "Campanhas de Google Ads e Meta Ads",
+        "Email marketing e automação",
+        "Marketing de conteúdo",
+        "Análise de dados e otimização contínua",
+        "Funis de vendas e conversão",
+      ],
+      link: "https://pt.wikipedia.org/wiki/Marketing_digital"
+    },
+    {
+      id: "support",
+      title: "Manutenção",
+      icon: Settings,
+      color: "from-[#2A7AFF] to-[#4F94FF]",
+      description: "Suporte técnico especializado",
+      features: [
+        "Atualizações de segurança",
+        "Backup regular do site",
+        "Monitoramento de performance",
+        "Suporte técnico prioritário",
+        "Pequenas alterações e ajustes",
+        "Otimização contínua de velocidade",
+      ],
+      link: "https://pt.wikipedia.org/wiki/Manuten%C3%A7%C3%A3o_de_software"
+    },
+    {
+      id: "design",
+      title: "Design",
+      icon: Palette,
+      color: "from-[#FF4D4D] to-[#FF6B6B]",
+      description: "Identidade visual marcante",
+      features: [
+        "Identidade visual completa",
+        "Logotipos e branding",
+        "Material gráfico para redes sociais",
+        "Banners e peças publicitárias",
+        "Catálogos e apresentações",
+        "UI/UX Design para aplicações",
+      ],
+      link: "https://pt.wikipedia.org/wiki/Design_visual"
+    },
+  ]
 
 export default function Home() {
 
@@ -238,12 +321,12 @@ export default function Home() {
         >
           {/* Benefits Section */}
           <section className="container mx-auto px-4 py-16 md:py-24">
-            <div className="text-center mb-16">
+            <div className=" mb-16">
               <h2 className="text-3xl md:text-4xl font-bold mb-4 px-4">
                 Por Que Escolher a Marketilize?
               </h2>
               
-              <p className="text-gray-400 max-w-2xl mx-auto text-lg md:text-xl">
+              <p className="text-gray-400 max-w-2xl px-4 text-lg md:text-xl">
                 Não somos apenas desenvolvedores, somos parceiros do seu crescimento
               </p>
             </div>
@@ -269,101 +352,7 @@ export default function Home() {
         </ScrollAnimation>
 
         <ScrollAnimation distance="30px" duration="0.8s" className="min-h-[200px]">
-          {/* How It Works Section */}
-          <section id="how-it-works" className="container mx-auto px-4 py-20 md:py-32 bg-[#0D0D0D] rounded-[2.5rem] border border-white/5 relative overflow-hidden">
-            
-            {/* Efeito de partículas de fundo */}
-            <ParticleBackground></ParticleBackground>
-            <div className="text-center mb-20 space-y-6 relative z-10">
-              <h2 className="text-4xl md:text-5xl font-bold mb-4 px-4 bg-gradient-to-r from-[#2A7AFF] via-[#FF4D4D] to-[#FF4D4D] bg-clip-text text-transparent">
-                Como Funciona?
-              </h2>
-              <p className="text-gray-300 max-w-2xl mx-auto text-xl md:text-2xl leading-relaxed">
-                Um processo simples e transparente para transformar sua visão em realidade
-              </p>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-8 md:gap-12 relative z-10">
-              {/* Linha de conexão animada aprimorada */}
-              <div className="hidden md:block absolute top-1/2 left-0 right-0 h-1.5 bg-gradient-to-r from-[#2A7AFF] via-[#B74DFF] to-[#FF4D4D] -translate-y-1/2 z-0 overflow-hidden">
-                <div className="absolute inset-0 bg-[length:200%_100%] animate-flow-line bg-gradient-to-r from-[#2A7AFF] via-[#B74DFF] to-[#FF4D4D]"></div>
-                <div className="absolute inset-0 bg-white/10 backdrop-blur-[1px]"></div>
-              </div>
-
-              {[
-                { 
-                  icon: MessageSquare, 
-                  title: "Conversa Sem Compromisso", 
-                  text: "Entendemos suas necessidades e objetivos de negócio em uma reunião descontraída.",
-                  gradient: "from-[#2A7AFF] to-[#2A7AFF]/80"
-                },
-                { 
-                  icon: FileCheck, 
-                  title: "Projeto Sob Medida", 
-                  text: "Criamos uma solução personalizada com protótipos para sua aprovação.",
-                  gradient: "from-[#2A7AFF] to-[#B74DFF]"
-                },
-                { 
-                  icon: Code, 
-                  title: "Desenvolvimento", 
-                  text: "Implementação transparente com atualizações semanais e testes rigorosos.",
-                  gradient: "from-[#B74DFF] to-[#FF4D4D]"
-                },
-                { 
-                  icon: Rocket, 
-                  title: "Lançamento & Crescimento", 
-                  text: "Publicação do projeto e estratégias contínuas para escalar seus resultados.",
-                  gradient: "from-[#FF4D4D] to-[#FF4D4D]/80"
-                }
-              ].map((step, index) => (
-                <div key={index} className="relative z-10 group cursor-pointer ">
-                {/* Card sólido sem transparência */}
-                <div className="flex flex-col items-center text-center p-6 bg-[#0D0D0D] rounded-2xl border border-white/10 hover:border-[#2A7AFF]/50 transition-all duration-300 hover:-translate-y-2 shadow-xl hover:shadow-[#2A7AFF]/20  ">
-                  
-                  {/* Efeito de brilho dinâmico (mantido mas com fundo sólido) */}
-                  <div className="absolute inset-0 rounded-2xl overflow-hidden">
-                    <div className="absolute inset-0 bg-[#0D0D0D] rounded-2xl"></div>
-                    <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-[radial-gradient(200px_at_50%_50%,rgba(42,122,255,0.1),transparent)]"></div>
-                  </div>
-
-                  <div className="relative mb-5">
-                    <div className="absolute -inset-2 bg-gradient-to-br from-[#2A7AFF] to-[#FF4D4D] rounded-full blur-md opacity-20 group-hover:opacity-40 transition-opacity"></div>
-                    <div className={`w-12 h-12 rounded-xl flex items-center justify-center bg-gradient-to-br ${step.gradient} shadow-lg relative z-10`}>
-                      <step.icon className="h-5 w-5 text-white" strokeWidth={1.5} />
-                    </div>
-                  </div>
-              
-                  <div className="space-y-3 relative z-10">
-                    <h3 className="text-xl font-semibold bg-gradient-to-r from-[#2A7AFF] via-[#FF4D4D] to-[#FF4D4D] bg-clip-text text-transparent">
-                      {step.title}
-                    </h3>
-                    <p className="text-gray-300/90 text-sm leading-relaxed text-balance">
-                      {step.text}
-                    </p>
-                  </div>
-              
-                  <div className="mt-5 w-7 h-7 rounded-full bg-[#2A7AFF] flex items-center justify-center text-white text-sm font-medium border border-white/20 relative z-10">
-                    {index + 1}
-                  </div>
-                </div>
-              </div>
-              ))}
-            </div>
-
-            <div className="text-center mt-20 relative z-10">
-              <Button className="bg-gradient-to-r from-[#FF4D4D] to-[#FF6B6B] hover:from-[#FF6B6B] hover:to-[#FF4D4D] font-bold text-xl p-7 cursor-pointer hover:scale-105 transition-all duration-500">
-                <Link id="btnWppSchedule" href="https://form.typeform.com/to/rEnDcO6y" target="_blank">
-                  <div className="relative z-20 flex items-center gap-4">
-                    <TrendingUp/>
-                    <span className=" bg-gradient-to-r  from-white via-[#BFDBFE] to-white bg-clip-text text-transparent tracking-wide drop-shadow-md">
-                       COMEÇAR
-                    </span>
-                    <ChevronRight className="h-8 w-8 text-[#BFDBFE] transition-transform group-hover:translate-x-3 group-hover:scale-110 duration-300 ease-[cubic-bezier(0.68,-0.55,0.27,1.55)]" />
-                  </div>
-                </Link>
-              </Button>
-            </div>
-          </section>
+          <HowItWorksSection />
         </ScrollAnimation>
 
         
@@ -401,222 +390,89 @@ export default function Home() {
         </ScrollAnimation>
 
         <ScrollAnimation distance="30px" duration="0.8s" className="min-h-[200px]">
+          <section id="services" className="container mx-auto px-4 py-16 md:py-24">
+            <div className=" mb-16 px-4">
+              <h2 className="text-3xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
+                Mais do que Sites: Soluções Completas
+              </h2>
+              <p className="text-gray-400 max-w-3xl  text-lg md:text-xl leading-relaxed">
+                Oferecemos um conjunto completo de serviços para impulsionar seu negócio online com estratégias comprovadas e
+                resultados mensuráveis
+              </p>
+            </div>
 
-        <section id="services" className="container mx-auto px-4 py-16 md:py-24">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Mais do que Sites: Soluções Completas</h2>
-            <p className="text-gray-400 max-w-2xl mx-auto">
-              Oferecemos um conjunto completo de serviços para impulsionar seu negócio online
-            </p>
-          </div>
-          <Tabs defaultValue="web" className="w-full">
-            <TabsList className="grid w-full grid-cols-2 md:grid-cols-4 mb-8">
-              <TabsTrigger value="web" className="data-[state=active]:bg-[#FF4D4D] hover:data-[state=active]:bg-[#FF4D4D]/90 py-3 data-[state=active]:text-white cursor-pointer">Web Design</TabsTrigger>
-              <TabsTrigger value="seo" className="data-[state=active]:bg-[#2A7AFF] data-[state=active]:text-white py-3 cursor-pointer">SEO & Tráfego</TabsTrigger>
-              <TabsTrigger value="marketing" className="data-[state=active]:bg-[#FF4D4D] hover:data-[state=active]:bg-[#FF4D4D]/90 py-3 data-[state=active]:text-white cursor-pointer">Marketing Digital</TabsTrigger>
-              <TabsTrigger value="support" className="data-[state=active]:bg-[#2A7AFF] data-[state=active]:text-white py-3 cursor-pointer">Manutenção</TabsTrigger>
-            </TabsList>
-            <br />
-            <TabsContent value="web" className="bg-[#0D0D0D] rounded-[2.5rem] border border-white/5 p-6">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-                <div>
-                  <h3 className="text-2xl font-bold mb-4">Web Design Profissional</h3>
-                  <p className="text-gray-300 mb-6">
-                    Criamos sites e e-commerces que não apenas impressionam visualmente, mas também são otimizados para conversão e resultados.
-                  </p>
-                  <ul className="space-y-3">
-                    <li className="flex items-center gap-3">
-                      <CheckCircle className="text-[#2A7AFF] h-5 w-5 flex-shrink-0" />
-                      <span>Landing Pages de alta conversão</span>
-                    </li>
-                    <li className="flex items-center gap-3">
-                      <CheckCircle className="text-[#2A7AFF] h-5 w-5 flex-shrink-0" />
-                      <span>E-commerces completos e otimizados</span>
-                    </li>
-                    <li className="flex items-center gap-3">
-                      <CheckCircle className="text-[#2A7AFF] h-5 w-5 flex-shrink-0" />
-                      <span>Sites institucionais modernos</span>
-                    </li>
-                    <li className="flex items-center gap-3">
-                      <CheckCircle className="text-[#2A7AFF] h-5 w-5 flex-shrink-0" />
-                      <span>Design responsivo para todos os dispositivos</span>
-                    </li>
-                    <li className="flex items-center gap-3">
-                      <CheckCircle className="text-[#2A7AFF] h-5 w-5 flex-shrink-0" />
-                      <span>Experiência do usuário (UX) otimizada</span>
-                    </li>
-                  </ul>
-                </div>
-                <div className="relative">
-                  <div className="absolute -inset-0.5 bg-gradient-to-r from-[#2A7AFF] to-[#FF4D4D] rounded-lg blur opacity-30"></div>
-                  <div className="relative bg-[#0A0A0A]/90 rounded-xl overflow-hidden group transition-all duration-300 hover:scale-[1.02]">
-                    <div className="relative pt-[66.66%]">
-                      <Image 
-                        src="/site3.webp" 
-                        fill
-                        alt="Web Design" 
-                        className="object-fit-cover p-4" 
-                        sizes="(max-width: 768px) 100vw, 50vw"
-                        quality={100}
-                        priority
-                      />
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </TabsContent>
-            <TabsContent value="seo" className="bg-[#111] p-6 rounded-xl border border-gray-800">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-                <div>
-                  <h3 className="text-2xl font-bold mb-4">SEO & Tráfego Orgânico</h3>
-                  <p className="text-gray-300 mb-6">
-                    Posicione seu site nos primeiros resultados do Google e atraia tráfego qualificado de forma orgânica.
-                  </p>
-                  <ul className="space-y-3">
-                    <li className="flex items-center gap-3">
-                      <CheckCircle className="text-[#2A7AFF] h-5 w-5 flex-shrink-0" />
-                      <span>Otimização on-page e off-page</span>
-                    </li>
-                    <li className="flex items-center gap-3">
-                      <CheckCircle className="text-[#2A7AFF] h-5 w-5 flex-shrink-0" />
-                      <span>Pesquisa de palavras-chave estratégicas</span>
-                    </li>
-                    <li className="flex items-center gap-3">
-                      <CheckCircle className="text-[#2A7AFF] h-5 w-5 flex-shrink-0" />
-                      <span>Criação de conteúdo otimizado para SEO</span>
-                    </li>
-                    <li className="flex items-center gap-3">
-                      <CheckCircle className="text-[#2A7AFF] h-5 w-5 flex-shrink-0" />
-                      <span>Análise de concorrentes e benchmarking</span>
-                    </li>
-                    <li className="flex items-center gap-3">
-                      <CheckCircle className="text-[#2A7AFF] h-5 w-5 flex-shrink-0" />
-                      <span>Relatórios mensais de desempenho</span>
-                    </li>
-                  </ul>
-                </div>
-                <div className="relative">
-                  <div className="absolute -inset-0.5 bg-gradient-to-r from-[#2A7AFF] to-[#FF4D4D] rounded-lg blur opacity-30"></div>
-                  <div className="relative bg-[#0A0A0A]/90 rounded-xl overflow-hidden group transition-all duration-300 hover:scale-[1.02]">
-                    <div className="relative pt-[66.66%]"> {/* Container de aspecto 3:2 (600x400) */}
-                      <Image 
-                        src="/seo.webp" 
-                        fill
-                        alt="SEO" 
-                        className="object-fit-cover p-4" 
-                        sizes="(max-width: 768px) 100vw, 50vw"
-                        quality={100}
-                        priority
-                      />
-                    </div>
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0A]/60 to-transparent pointer-events-none" />
-                    <div className="absolute inset-0 border-2 border-white/5 group-hover:border-[#2A7AFF]/30 transition-all duration-300 rounded-xl" />
-                  </div>
-                </div>
-              </div>
-            </TabsContent>
-            <TabsContent value="marketing" className="bg-[#111] p-6 rounded-xl border border-gray-800">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-                <div>
-                  <h3 className="text-2xl font-bold mb-4">Marketing Digital Completo</h3>
-                  <p className="text-gray-300 mb-6">
-                    Estratégias de marketing digital que geram resultados mensuráveis e impulsionam seu negócio.
-                  </p>
-                  <ul className="space-y-3">
-                    <li className="flex items-center gap-3">
-                      <CheckCircle className="text-[#2A7AFF] h-5 w-5 flex-shrink-0" />
-                      <span>Gestão de redes sociais</span>
-                    </li>
-                    <li className="flex items-center gap-3">
-                      <CheckCircle className="text-[#2A7AFF] h-5 w-5 flex-shrink-0" />
-                      <span>Campanhas de Google Ads e Meta Ads</span>
-                    </li>
-                    <li className="flex items-center gap-3">
-                      <CheckCircle className="text-[#2A7AFF] h-5 w-5 flex-shrink-0" />
-                      <span>Email marketing e automação</span>
-                    </li>
-                    <li className="flex items-center gap-3">
-                      <CheckCircle className="text-[#2A7AFF] h-5 w-5 flex-shrink-0" />
-                      <span>Marketing de conteúdo</span>
-                    </li>
-                    <li className="flex items-center gap-3">
-                      <CheckCircle className="text-[#2A7AFF] h-5 w-5 flex-shrink-0" />
-                      <span>Análise de dados e otimização contínua</span>
-                    </li>
-                  </ul>
-                </div>
-                <div className="relative">
-                  <div className="absolute -inset-0.5 bg-gradient-to-r from-[#2A7AFF] to-[#FF4D4D] rounded-lg blur opacity-30"></div>
-                  <div className="relative bg-[#0A0A0A]/90 rounded-xl overflow-hidden group transition-all duration-300 hover:scale-[1.02]">
-                    <div className="relative pt-[66.66%]"> {/* Container de aspecto 3:2 (600x400) */}
-                      <Image 
-                        src="/marketing.webp" 
-                        fill
-                        alt="Marketing Digital" 
-                        className="object-fit-cover p-4" 
-                        sizes="(max-width: 768px) 100vw, 50vw"
-                        quality={100}
-                        priority
-                      />
-                    </div>
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0A]/60 to-transparent pointer-events-none" />
-                    <div className="absolute inset-0 border-2 border-white/5 group-hover:border-[#2A7AFF]/30 transition-all duration-300 rounded-xl" />
-                  </div>
-                </div>
-              </div>
-            </TabsContent>
-            <TabsContent value="support" className="bg-[#111] p-6 rounded-xl border border-gray-800">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-                <div>
-                  <h3 className="text-2xl font-bold mb-4">Manutenção e Suporte</h3>
-                  <p className="text-gray-300 mb-6">
-                    Mantenha seu site sempre atualizado, seguro e funcionando perfeitamente com nossos planos de manutenção.
-                  </p>
-                  <ul className="space-y-3">
-                    <li className="flex items-center gap-3">
-                      <CheckCircle className="text-[#2A7AFF] h-5 w-5 flex-shrink-0" />
-                      <span>Atualizações de segurança</span>
-                    </li>
-                    <li className="flex items-center gap-3">
-                      <CheckCircle className="text-[#2A7AFF] h-5 w-5 flex-shrink-0" />
-                      <span>Backup regular do site</span>
-                    </li>
-                    <li className="flex items-center gap-3">
-                      <CheckCircle className="text-[#2A7AFF] h-5 w-5 flex-shrink-0" />
-                      <span>Monitoramento de performance</span>
-                    </li>
-                    <li className="flex items-center gap-3">
-                      <CheckCircle className="text-[#2A7AFF] h-5 w-5 flex-shrink-0" />
-                      <span>Suporte técnico prioritário</span>
-                    </li>
-                    <li className="flex items-center gap-3">
-                      <CheckCircle className="text-[#2A7AFF] h-5 w-5 flex-shrink-0" />
-                      <span>Pequenas alterações e ajustes</span>
-                    </li>
-                  </ul>
-                </div>
-                <div className="relative">
-                  <div className="absolute -inset-0.5 bg-gradient-to-r from-[#2A7AFF] to-[#FF4D4D] rounded-lg blur opacity-30"></div>
-                  <div className="relative bg-[#0A0A0A]/90 rounded-xl overflow-hidden group transition-all duration-300 hover:scale-[1.02]">
-                    <div className="relative pt-[66.66%]"> {/* Container de aspecto 3:2 (600x400) */}
-                      <Image 
-                        src="/manutencao.webp" 
-                        fill
-                        alt="Manutenção" 
-                        className="object-fit-cover p-4" 
-                        sizes="(max-width: 768px) 100vw, 50vw"
-                        quality={100}
-                        priority
-                      />
-                    </div>
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0A]/60 to-transparent pointer-events-none" />
-                    <div className="absolute inset-0 border-2 border-white/5 group-hover:border-[#2A7AFF]/30 transition-all duration-300 rounded-xl" />
-                  </div>
-                </div>
-              </div>
-            </TabsContent>
-          </Tabs>
-        </section>
+            <Tabs defaultValue="web" className="w-full">
+              <TabsList className="grid w-full grid-cols-2 md:grid-cols-3 lg:grid-cols-5 mb-12 bg-[#0A0A0A] border border-white/10 rounded-2xl p-2 h-auto">
+                {services.map((service) => {
+                  const IconComponent = service.icon
+                  return (
+                    <TabsTrigger
+                      key={service.id}
+                      value={service.id}
+                      className={`flex flex-col items-center gap-2 py-4 px-3 rounded-xl transition-all duration-300 data-[state=active]:bg-gradient-to-r ${service.color} cursor-pointer data-[state=active]:shadow-lg hover:bg-white/5 group`}
+                    >
+                      <IconComponent className="h-5 w-5 md:h-6 md:w-6 group-data-[state=active]:text-white transition-colors" />
+                      <span className="text-xs md:text-sm font-medium group-data-[state=active]:text-white transition-colors">
+                        {service.title}
+                      </span>
+                    </TabsTrigger>
+                  )
+                })}
+              </TabsList>
+
+              {services.map((service) => {
+                const IconComponent = service.icon
+                return (
+                  <TabsContent key={service.id} value={service.id} className="mt-0">
+                    <Card className="bg-gradient-to-br from-[#0D0D0D] to-[#1A1A1A] border-white/10 rounded-3xl overflow-hidden">
+                      <CardContent className="p-8 md:p-12">
+                        <div className="text-center mb-12">
+                          <div
+                            className={`inline-flex items-center justify-center w-20 h-20 rounded-2xl bg-gradient-to-r ${service.color} mb-6 shadow-2xl`}
+                          >
+                            <IconComponent className="h-10 w-10 text-white" />
+                          </div>
+                          <h3 className="text-3xl md:text-4xl font-bold mb-4 bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
+                            {service.title}
+                          </h3>
+                          <p className="text-gray-400 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed">
+                            {service.description}
+                          </p>
+                        </div>
+
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                          {service.features.map((feature, index) => (
+                            <div
+                              key={index}
+                              className="group flex items-start gap-4 p-4 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 hover:border-white/20 transition-all duration-300 hover:scale-105"
+                            >
+                              <div
+                                className={`flex-shrink-0 w-8 h-8 rounded-lg bg-gradient-to-r ${service.color} flex items-center justify-center shadow-lg`}
+                              >
+                                <CheckCircle className="h-4 w-4 text-white" />
+                              </div>
+                              <span className="text-gray-300 group-hover:text-white transition-colors font-medium">
+                                {feature}
+                              </span>
+                            </div>
+                          ))}
+                        </div>
+
+                        <div className="mt-12 text-center">
+                          <Link href={service.link} target="_blank"
+                            className={`inline-flex items-center gap-2 px-6 py-3 rounded-full bg-gradient-to-r ${service.color} text-white font-semibold shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer hover:scale-105`}
+                          >
+                            <IconComponent className="h-5 w-5" />
+                            <span>Saiba mais sobre {service.title}</span>
+                          </Link>
+                        </div>
+                      </CardContent>
+                    </Card>
+                  </TabsContent>
+                )
+              })}
+            </Tabs>
+          </section>
         </ScrollAnimation>
 
         <ScrollAnimation distance="30px" duration="0.8s" className="min-h-[200px]">
@@ -652,16 +508,17 @@ export default function Home() {
           </section>
         </ScrollAnimation>
 
+        <hr className="max-w-[70%] mx-auto"/>
         <ScrollAnimation distance="30px" duration="0.8s" className="min-h-[200px]">
 
-        <section className="py-16 md:py-24">
+        <section className="py-16 md:py-24 ">
           <div className="container mx-auto px-4">
             <div className=" bg-[#111] border border-gray-800 rounded-3xl p-8 md:p-12 md:text-center max-w-[600px] mx-auto">
               <h2 className="text-3xl md:text-4xl font-extrabold mb-4 text-white ">Pronto para Dominar o Digital?</h2>
               <p className="text-white/90 max-w-2xl mx-auto mb-8 text-lg ">
                 A Primeira Conversa é Grátis e Sem Compromisso!
               </p>
-              <Link id="btnWppContact" target="_blank" href="https://wa.me/5575983252987?text=Ol%C3%A1,%20tenho%20interesse%20em%20criar%20um%20site%20com%20voc%C3%AAs">
+              <Link id="btnWppContact" target="_blank" href="https://form.typeform.com/to/rEnDcO6y">
                 <Button className="bg-gradient-to-r from-[#FF4D4D] to-[#FF6B6B] hover:from-[#FF6B6B] hover:to-[#FF4D4D] font-bold text-white px-8 py-6 text-lg rounded-lg cursor-pointer transition-all duration-500 hover:scale-105 w-full md:w-auto">
                   <MessageCircle/>SIM <ChevronRight className="ml-2 h-5 w-5" />
                 </Button>
@@ -669,6 +526,8 @@ export default function Home() {
             </div>
           </div>
         </section>
+        <br />
+        <br />
         </ScrollAnimation>
       </main>
       <Modal isOpen={showModal} onClose={handleCloseModal}>
